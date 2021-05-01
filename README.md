@@ -1,9 +1,9 @@
 # JUDUL_PROYEK
 
 Anggota Kelompok:
-* NAMA (NPM)
-* NAMA (NPM)
-* NAMA (NPM)
+* Affan Rifqy Kurniadi (140810200003)
+* Rheza Pandya Andhikaputra (140810200023)
+* Andyka Baswara Putra (140810200061)
 ---
 ## Latar Belakang
 
