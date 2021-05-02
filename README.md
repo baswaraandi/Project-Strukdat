@@ -16,6 +16,15 @@ linked list, stack, dan juga queue.
 
 
 ## Tujuan dan Manfaat
+Adapun Tujuan dari pembuatan program sederhana ini, yaitu :
+1. Menampilkan data dari toko kurma dengan berbagai jenis kurma yang ada
+2. Mengorganisir dalam mengelola data kurma (Menambah data, mencari, dan menghapus data kurma)
+3. Menambah stock kurma yang ada di Toko Kurma
+4. Melakukan sistem pre-order pada toko kurma
+
+Manfaat
+Di era industri yang semakin berkembang ini data semakin berkembang dari yang hanya menggunakan kertas biasa menjadi menggunakan perangkat yang lebih modern. Namun, banyak yang sulit untuk mengerti menggunakannya, apalagi para penjual yang masih awam dengan teknologi. Maka dari itu, kami membuat program sederhana ini dengan harapan bahwa para penjual kurma bisa menggunakan aplikasi ini untuk mempermudah mengolah data dengan cara yang lebih modern dan mudah dipahami . 
+
 
 ## Penjelasan Aplikasi
 
