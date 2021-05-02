@@ -27,8 +27,7 @@ Di era industri yang semakin berkembang ini data semakin berkembang dari yang ha
 
 
 ## Penjelasan Aplikasi
-TOKO KURMA
-Sesuai namanya, program dibuat untuk membantu pendataan kurma. Program ini akan bisa untuk mencari data kurma (jenis-jenisnya), kemudian dapat menambahkan data atau menghilangkan data kurma. Yang terakhir, data kurma yang telah tersimpan atau tersedia di toko dapat ditambahkan jumlah stok atau ketersediaannya maupun sebaliknya.
+TOKO KURMA : Sesuai namanya, program dibuat untuk membantu pendataan kurma. Program ini akan dipakai untuk mencari data kurma (jenis-jenisnya), kemudian dapat menambahkan data atau menghilangkan data kurma. Yang terakhir, data kurma yang telah tersimpan atau tersedia di toko dapat ditambahkan jumlah stok atau ketersediaannya maupun sebaliknya.
 
 
 ## Gambar Rancangan Antar Muka
