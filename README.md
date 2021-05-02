@@ -1,4 +1,4 @@
-# Toko_Kurma
+# Toko Kurma
 
 Anggota Kelompok:
 * Affan Rifqy Kurniadi (140810200003)
@@ -6,6 +6,13 @@ Anggota Kelompok:
 * Andyka Baswara Putra (140810200061)
 ---
 ## Latar Belakang
+Bagi programmer, istilah struktur data tentu bukanlah sesuatu yang asing di telinga. 
+Bahkan programmer tentu juga paham apa saja tipe struktur data. Ini wajar saja mengingat struktur 
+data itu adalah salah satu bagian penting ketika seorang programmer hendak membuat suatu program.
+Dalam mata kuliah struktur data ini kami ditugaskan membuat program mengena materi di dalam struktur data.
+Program kami dibuat untuk memenuhi tugas akhir semester genap Praktikum Struktur Data,
+di dalam program yang kami buat terdapat 3 materi yang akan kami implementasikan, yaitu
+linked list, stack, dan juga queue.
 
 
 ## Tujuan dan Manfaat
