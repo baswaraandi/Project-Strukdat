@@ -45,6 +45,7 @@ Dalam kondisi pandemi seperti ini, tidak memungkinkan untuk bertemu bertatap muk
 jelaskan bagaimana kalian bekerja sama, berkoordinasi, pembagian kerja.Tools apa yang kalian gunakan
 untuk bekerja bersama sama cth github, google docs, google meet>ibebaskan sesuai kreatifitas kalian
 !-->
+Link Figma : https://www.figma.com/file/JmZOLsanPcOdNQquxQfxAS/Project-Struktur-Data?node-id=0%3A1
 
 
 ## Lisensi
