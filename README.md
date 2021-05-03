@@ -46,7 +46,8 @@ Dalam kondisi pandemi seperti ini, tidak memungkinkan untuk bertemu bertatap muk
 jelaskan bagaimana kalian bekerja sama, berkoordinasi, pembagian kerja.Tools apa yang kalian gunakan
 untuk bekerja bersama sama cth github, google docs, google meet>ibebaskan sesuai kreatifitas kalian
 !-->
-
+Di dalam masa pandemi ini kita menggunakan beberapa aplikasi bantuan, seperti figma, google docs, github, dan vscode  untuk membantu dalam pengerjaan tugas. Kemudian, ada discord, dan line untuk komunikasi antar anggota kelompok.
+Untuk pembagian tugas sendiri, kelompok kami tidak membagi secara spesifik. Setiap anggota kelompok saling membantu di setiap bagian program yang dikerjakan.
 
 
 ## Lisensi
