@@ -36,6 +36,7 @@ Buat rancangan antar muka selengkap mungkin sesuai fungsi aplikasinya. rancangan
 diusahakan serapih dan seindah mungkin. tools yang digunakan dalam pembuatan rancangan gambar
 dibebaskan sesuai kreatifitas kalian
 !-->
+Link Figma : https://www.figma.com/file/JmZOLsanPcOdNQquxQfxAS/Project-Struktur-Data?node-id=0%3A1
 
 
 ## Rencana Pengerjaan Projek
@@ -45,7 +46,7 @@ Dalam kondisi pandemi seperti ini, tidak memungkinkan untuk bertemu bertatap muk
 jelaskan bagaimana kalian bekerja sama, berkoordinasi, pembagian kerja.Tools apa yang kalian gunakan
 untuk bekerja bersama sama cth github, google docs, google meet>ibebaskan sesuai kreatifitas kalian
 !-->
-Link Figma : https://www.figma.com/file/JmZOLsanPcOdNQquxQfxAS/Project-Struktur-Data?node-id=0%3A1
+
 
 
 ## Lisensi
