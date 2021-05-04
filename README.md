@@ -41,7 +41,7 @@ Link Figma : https://www.figma.com/file/JmZOLsanPcOdNQquxQfxAS/Project-Struktur-
 
 ## Rencana Pengerjaan Projek
 Di dalam masa pandemi ini kita menggunakan beberapa aplikasi bantuan, seperti figma, google docs, github, dan vscode  untuk membantu dalam pengerjaan tugas. Kemudian, ada discord, dan line untuk komunikasi antar anggota kelompok.
-Untuk pembagian tugas sendiri, kelompok kami tidak membagi secara spesifik. Setiap anggota kelompok saling membantu di setiap bagian program yang dikerjakan.
+Untuk pembagian tugas coding dibagi jadi 3, yang pertama untuk coding linked list menjadi bagian Rheza. Kedua, untuk bagian coding stack menjadi bagian Andyka. Terakhir, untuk coding queue menjadi bagian Affan.
 
 
 
