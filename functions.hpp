@@ -27,17 +27,6 @@ void new_element(list &pBaru, std::string Data){
   pBaru->next = nullptr;
 }
 
-// void insert_first(list &head, std::string isi){
-//   pointer pBaru;
-//   new_element(pBaru, isi);
-//     if(head ==nullptr){
-//       head = pBaru;
-//     }else{
-//       pBaru ->next = head;
-//       head = pBaru;
-//     }
-// }
-
 void insert_last(list &head, std::string isi){
    pointer pBaru;
    new_element(pBaru, isi);
@@ -47,27 +36,6 @@ void insert_last(list &head, std::string isi){
     }
     curr ->next = pBaru;
 }
-
-// void insert_between(list& head, int target){
-//   bool founditem = false;
-//   std::string data;
-//   pointer prev;
-//   pointer curr = head;
-//   while (!founditem && curr != NULL){
-//     if(prev->data == target){
-//       pointer pBaru;
-//       new_element(pBaru, data);
-//       pBaru -> next = curr;
-//       prev -> next = pBaru;
-//       founditem = true;
-//     } else {
-//         prev = curr;
-//         curr = curr ->next;
-//     }
-//   }
-//   if(!founditem)
-//     std::cout << "Input Salah!" << '\n';
-// }
 
 void search(list& head, list& pBantu, std::string x) 
 { 
@@ -117,8 +85,8 @@ struct Node{
 typedef Node *pNode;
 typedef pNode Stack;
 
-Stack createStack(){
-  Stack top = nullptr;
+Stack createStack(Stack& top){
+  top = nullptr;
   return top;
 }
 
@@ -164,50 +132,6 @@ void pop(Stack &top){
     target->next = nullptr;
   }
   delete target;
-}
-
-void edit_kurma(){
-  Stack stock_kurma = createStack();
-  int banyak, opsi, cek_stock;
-    std::cout << "Stok Kurma : " << peek(stock_kurma) << " KG" << '\n';
-    std::cout << "1.) Tambah Kurma" << '\n';
-    std::cout << "2.) Kurangi Kurma" << '\n';
-    std::cout << "3.) Undo" << '\n';
-    std::cout << "4.) Exit" << '\n';
-    std::cout << "Opsi> "; std::cin >> opsi;
-  do{
-      switch (opsi){
-          case 1:
-          std::cout << "\nTambahkan berapa?> ";
-          std::cin >> banyak;
-          std::cout << "\n";
-          stock_kurma = push(stock_kurma, new_element(peek(stock_kurma) + banyak));
-          break;
-
-          case 2:
-          std::cout << "\nKurangi berapa?> ";
-          std::cin >> banyak;
-          std::cout << "\n\n";
-          cek_stock = peek(stock_kurma) - banyak;
-          if (cek_stock < 0)
-          cek_stock = 0;
-          stock_kurma = push(stock_kurma, new_element(cek_stock));
-          break;
-
-          case 3:
-          pop(stock_kurma);
-          std::cout << "\n\n";
-          break;
-
-          case 4:
-          std::cout << "Bye.." << "\n\n";
-          break;
-
-          default:
-          std::cout << "\nInput Salah!\n\n";
-          break;
-         }
-    }while (opsi != 4);
 }
 
 bool deleteStack (Node *top){
