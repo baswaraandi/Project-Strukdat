@@ -5,13 +5,13 @@ void loading()
   system("cls");
   char a = 177, b = 219;
   std::cout << "LOADING\t";
-  for (int i = 0; i <= 23; i++)
+  for (int i = 0; i < 23; i++)
     std::cout << a;
     
   std::cout << "\r";
   std::cout << "\t";
   
-  for (int i = 0; i <= 23; i++) {
+  for (int i = 0; i < 23; i++) {
     std::cout << b;
     Sleep(100);
   }
