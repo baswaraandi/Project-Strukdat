@@ -6,35 +6,38 @@
 // CASE 1 : lINKED lIST
 
 struct node{
-    std::string data;
-    node *next;
+  std::string data;
+  node *next;
 };
 typedef node* pointer;
 typedef pointer list;
   
 void traversal(list head){
-   pointer curr = head;
-    while(curr != nullptr){
-        std::cout << curr->data << ' ';
-        curr = curr -> next;
-    }
-    std::cout << '\n';
+  pointer curr = head;
+  while(curr != nullptr){
+    std::cout << curr->data << " ";
+    curr = curr -> next;
+  }
+  std::cout << '\n';
 }
+
 void new_element(list &pBaru, std::string Data){
-    pBaru = new node;
-    pBaru->data = Data;
-    pBaru->next = nullptr;
+  pBaru = new node;
+  pBaru->data = Data;
+  pBaru->next = nullptr;
 }
+
 // void insert_first(list &head, std::string isi){
-//    pointer pBaru;
-//     new_element(pBaru, isi);
+//   pointer pBaru;
+//   new_element(pBaru, isi);
 //     if(head ==nullptr){
-//         head = pBaru;
+//       head = pBaru;
 //     }else{
-//         pBaru ->next = head;
-//         head = pBaru;
+//       pBaru ->next = head;
+//       head = pBaru;
 //     }
 // }
+
 void insert_last(list &head, std::string isi){
    pointer pBaru;
    new_element(pBaru, isi);
@@ -46,45 +49,24 @@ void insert_last(list &head, std::string isi){
 }
 
 // void insert_between(list& head, int target){
-//     bool founditem = false;
-//    pointer prev;
-//    pointer curr = head;
-//     while (!founditem && curr != NULL){
-//         if(prev->data == target){
-//            pointer pBaru;
-//             new_element(pBaru);
-//             pBaru -> next = curr;
-//             prev -> next = pBaru;
-//             founditem = true;
-//         } else {
-//             prev = curr;
-//             curr = curr ->next;
-//         }
-//     }
-//     if(!founditem)
-//         std::cout << "Input Salah!" << '\n';
-// }
-
-// void delete_target(list head, int n){
-//    pointer target;
-//     if (head == nullptr) {
-//     target = nullptr;
-//     } else if (head->data == n) {
-//    pointer prev = head;
-//    pointer curr = head->next;
-//     head = curr;
-//     delete prev;
+//   bool founditem = false;
+//   std::string data;
+//   pointer prev;
+//   pointer curr = head;
+//   while (!founditem && curr != NULL){
+//     if(prev->data == target){
+//       pointer pBaru;
+//       new_element(pBaru, data);
+//       pBaru -> next = curr;
+//       prev -> next = pBaru;
+//       founditem = true;
 //     } else {
-//    pointer prev, after, curr = head;
-//     while (curr->data != n && curr != nullptr) {
-//       prev = curr;
-//       curr = curr->next;
-//       after = curr->next;
+//         prev = curr;
+//         curr = curr ->next;
 //     }
-//     target = curr;
-//     prev->next = after;
 //   }
-//   delete target;
+//   if(!founditem)
+//     std::cout << "Input Salah!" << '\n';
 // }
 
 void search(list& head, list& pBantu, std::string x) 
@@ -98,6 +80,32 @@ void search(list& head, list& pBantu, std::string x)
         pBantu = pBantu->next; 
     } 
 } 
+
+void delete_by_key(list& head, list& p_delete, std::string key){
+  search(head, p_delete, key);
+    if (head == nullptr || p_delete == nullptr) {
+      std::cout << "Kurma yang dicari tidak ditemukan!\n\n";
+    } else {
+        if (p_delete == head) {
+          head = head->next;
+          p_delete->next = nullptr;
+        } else if (p_delete->next == nullptr) {
+          pointer pre = head;
+          while (pre->next != p_delete) {
+            pre = pre->next;
+          }
+          pre->next = nullptr;
+        } else {
+          pointer pre = head;
+          while (pre->next != p_delete) {
+            pre = pre->next;
+          }
+          pre->next = p_delete->next;
+          p_delete->next = nullptr;
+        }
+        delete p_delete;
+    }
+}
 
 // CASE 2 : Stack
 
@@ -202,7 +210,6 @@ void edit_kurma(){
     }while (opsi != 4);
 }
 
-<<<<<<< HEAD
 bool deleteStack (Node *top){
   Node *curr;
   while (top != nullptr){
@@ -213,8 +220,6 @@ bool deleteStack (Node *top){
   return 0;
 }
 
-=======
->>>>>>> 62a83abad6e19a6f5849b260a3741b4dc91852d3
 // CASE 3 : PRIORTY QUEUE
 
 struct Node2
