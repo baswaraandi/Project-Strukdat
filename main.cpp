@@ -1,6 +1,7 @@
 #include "interface.hpp"
 
 int main() {
+<<<<<<< HEAD
     list first = nullptr;
     list pBantu;
     new_element(first, "Ajwa");
@@ -10,6 +11,11 @@ int main() {
     int banyak, opsi_linked, opsi_stack, cek_stock;
     int pil_menu;
     std::string pil_kurma;
+=======
+    Stack stock_kurma = createStack();
+    int banyak, opsi, cek_stock;
+    int pil_menu;
+>>>>>>> 62a83abad6e19a6f5849b260a3741b4dc91852d3
     loading();
     do {
         tampilan_awal();
@@ -18,6 +24,7 @@ int main() {
             case 1:
             loading();
             tampilan_edit();
+<<<<<<< HEAD
             std::cout << "Masukin Nomor Menu!\n -> "; std::cin >> opsi_linked;
             switch(opsi_linked){
                 case 1:
@@ -45,6 +52,8 @@ int main() {
                     std::cout << "\nInput Salah!\n\n";
                     break;
             }
+=======
+>>>>>>> 62a83abad6e19a6f5849b260a3741b4dc91852d3
             break;
             case 2:
             loading();
@@ -53,8 +62,13 @@ int main() {
             std::cout << "2.) Kurangi Kurma" << '\n';
             std::cout << "3.) Undo" << '\n';
             std::cout << "4.) Exit" << '\n';
+<<<<<<< HEAD
             std::cout << "Opsi> "; std::cin >> opsi_stack;
                     switch (opsi_stack){
+=======
+            std::cout << "Opsi> "; std::cin >> opsi;
+                    switch (opsi){
+>>>>>>> 62a83abad6e19a6f5849b260a3741b4dc91852d3
                         case 1:
                         std::cout << "\nTambahkan berapa?> ";
                         std::cin >> banyak;
@@ -97,5 +111,8 @@ int main() {
             break;
         }
     }while (pil_menu != 4);
+<<<<<<< HEAD
     deleteStack(stock_kurma);
+=======
+>>>>>>> 62a83abad6e19a6f5849b260a3741b4dc91852d3
 }

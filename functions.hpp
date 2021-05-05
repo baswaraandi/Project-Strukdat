@@ -202,6 +202,7 @@ void edit_kurma(){
     }while (opsi != 4);
 }
 
+<<<<<<< HEAD
 bool deleteStack (Node *top){
   Node *curr;
   while (top != nullptr){
@@ -212,6 +213,8 @@ bool deleteStack (Node *top){
   return 0;
 }
 
+=======
+>>>>>>> 62a83abad6e19a6f5849b260a3741b4dc91852d3
 // CASE 3 : PRIORTY QUEUE
 
 struct Node2
