@@ -37,13 +37,33 @@ void tampilan_edit() {
     std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
 }
 
-void tampilan_cek_stock() {
+void cek_stock() {
+    int opsi;
     std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
     std::cout << "\t\t Cek Stock Kurma" << std::endl;
     std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
     std::cout << "Daftar Stock" << std::endl;
     std::cout << "1. Kurma A\n2. Kurma B\n3. Kurma C\n4. Kembali" << std::endl;
+    std::cout << "Masukkan pilihan Kurma : "; std::cin >> opsi;
     std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
+        switch (opsi)
+        {
+        case 1:
+            edit_kurma();
+            break;
+        case 2:
+            edit_kurma();
+            break;
+        case 3:
+            edit_kurma();
+            break;
+        case 4:
+            std::cout << "Bye.." << "\n\n";
+            break;
+        default:
+            std::cout << "\nInput Salah!\n\n";
+            break;
+        }
 }
 
 void tampilan_edit_stock() {

@@ -1,6 +1,8 @@
 #include "interface.hpp"
 
 int main() {
+    Stack stock_kurma = createStack();
+    int banyak, opsi, cek_stock;
     int pil_menu;
     loading();
     do {
@@ -13,8 +15,44 @@ int main() {
             break;
             case 2:
             loading();
-            tampilan_cek_stock();
-            break;
+            std::cout << "Stok Kurma : " << peek(stock_kurma) << " KG" << '\n';
+            std::cout << "1.) Tambah Kurma" << '\n';
+            std::cout << "2.) Kurangi Kurma" << '\n';
+            std::cout << "3.) Undo" << '\n';
+            std::cout << "4.) Exit" << '\n';
+            std::cout << "Opsi> "; std::cin >> opsi;
+                    switch (opsi){
+                        case 1:
+                        std::cout << "\nTambahkan berapa?> ";
+                        std::cin >> banyak;
+                        std::cout << "\n";
+                        stock_kurma = push(stock_kurma, new_element(peek(stock_kurma) + banyak));
+                        break;
+
+                        case 2:
+                        std::cout << "\nKurangi berapa?> ";
+                        std::cin >> banyak;
+                        std::cout << "\n\n";
+                        cek_stock = peek(stock_kurma) - banyak;
+                        if (cek_stock < 0)
+                        cek_stock = 0;
+                        stock_kurma = push(stock_kurma, new_element(cek_stock));
+                        break;
+
+                        case 3:
+                        pop(stock_kurma);
+                        std::cout << "\n\n";
+                        break;
+
+                        case 4:
+                        std::cout << "Bye.." << "\n\n";
+                        break;
+
+                        default:
+                        std::cout << "\nInput Salah!\n\n";
+                        break;
+                        }
+                    break;
             case 3:
             loading();
             tampilan_penjualan();
@@ -25,5 +63,5 @@ int main() {
             exit(0);
             break;
         }
-    } while (pil_menu != 4);
+    }while (pil_menu != 4);
 }
