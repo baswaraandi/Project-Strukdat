@@ -1,9 +1,12 @@
 #include <iostream>
 #include <string>
+#include <windows.h>
+#include <iomanip>
+
 // CASE 1 : lINKED lIST
 
 struct node{
-    int data;
+    std::string data;
     node *next;
 };
 typedef node* pointer;
@@ -17,24 +20,24 @@ void traversal(list head){
     }
     std::cout << '\n';
 }
-void new_element(list &pBaru){
+void new_element(list &pBaru, std::string Data){
     pBaru = new node;
-    std::cin>>pBaru->data;
+    pBaru->data = Data;
     pBaru->next = nullptr;
 }
-void insert_first(list &head){
+// void insert_first(list &head, std::string isi){
+//    pointer pBaru;
+//     new_element(pBaru, isi);
+//     if(head ==nullptr){
+//         head = pBaru;
+//     }else{
+//         pBaru ->next = head;
+//         head = pBaru;
+//     }
+// }
+void insert_last(list &head, std::string isi){
    pointer pBaru;
-    new_element(pBaru);
-    if(head ==nullptr){
-        head = pBaru;
-    }else{
-        pBaru ->next = head;
-        head = pBaru;
-    }
-}
-void insert_last(list &head){
-   pointer pBaru;
-    new_element(pBaru);
+   new_element(pBaru, isi);
    pointer curr = head;
     while(curr->next != nullptr){
         curr = curr->next;
@@ -42,47 +45,59 @@ void insert_last(list &head){
     curr ->next = pBaru;
 }
 
-void insert_between(list& head, int target){
-    bool founditem = false;
-   pointer prev;
-   pointer curr = head;
-    while (!founditem && curr != NULL){
-        if(prev->data == target){
-           pointer pBaru;
-            new_element(pBaru);
-            pBaru -> next = curr;
-            prev -> next = pBaru;
-            founditem = true;
-        } else {
-            prev = curr;
-            curr = curr ->next;
-        }
-    }
-    if(!founditem)
-        std::cout << "Input Salah!" << '\n';
-}
+// void insert_between(list& head, int target){
+//     bool founditem = false;
+//    pointer prev;
+//    pointer curr = head;
+//     while (!founditem && curr != NULL){
+//         if(prev->data == target){
+//            pointer pBaru;
+//             new_element(pBaru);
+//             pBaru -> next = curr;
+//             prev -> next = pBaru;
+//             founditem = true;
+//         } else {
+//             prev = curr;
+//             curr = curr ->next;
+//         }
+//     }
+//     if(!founditem)
+//         std::cout << "Input Salah!" << '\n';
+// }
 
-void delete_target(list head, int n){
-   pointer target;
-    if (head == nullptr) {
-    target = nullptr;
-    } else if (head->data == n) {
-   pointer prev = head;
-   pointer curr = head->next;
-    head = curr;
-    delete prev;
-    } else {
-   pointer prev, after, curr = head;
-    while (curr->data != n && curr != nullptr) {
-      prev = curr;
-      curr = curr->next;
-      after = curr->next;
-    }
-    target = curr;
-    prev->next = after;
-  }
-  delete target;
-}
+// void delete_target(list head, int n){
+//    pointer target;
+//     if (head == nullptr) {
+//     target = nullptr;
+//     } else if (head->data == n) {
+//    pointer prev = head;
+//    pointer curr = head->next;
+//     head = curr;
+//     delete prev;
+//     } else {
+//    pointer prev, after, curr = head;
+//     while (curr->data != n && curr != nullptr) {
+//       prev = curr;
+//       curr = curr->next;
+//       after = curr->next;
+//     }
+//     target = curr;
+//     prev->next = after;
+//   }
+//   delete target;
+// }
+
+void search(list& head, list& pBantu, std::string x) 
+{ 
+    pBantu = head;
+    while (pBantu != nullptr) 
+    { 
+        if (pBantu->data == x) {
+            break;
+        }
+        pBantu = pBantu->next; 
+    } 
+} 
 
 // CASE 2 : Stack
 
@@ -141,6 +156,60 @@ void pop(Stack &top){
     target->next = nullptr;
   }
   delete target;
+}
+
+void edit_kurma(){
+  Stack stock_kurma = createStack();
+  int banyak, opsi, cek_stock;
+    std::cout << "Stok Kurma : " << peek(stock_kurma) << " KG" << '\n';
+    std::cout << "1.) Tambah Kurma" << '\n';
+    std::cout << "2.) Kurangi Kurma" << '\n';
+    std::cout << "3.) Undo" << '\n';
+    std::cout << "4.) Exit" << '\n';
+    std::cout << "Opsi> "; std::cin >> opsi;
+  do{
+      switch (opsi){
+          case 1:
+          std::cout << "\nTambahkan berapa?> ";
+          std::cin >> banyak;
+          std::cout << "\n";
+          stock_kurma = push(stock_kurma, new_element(peek(stock_kurma) + banyak));
+          break;
+
+          case 2:
+          std::cout << "\nKurangi berapa?> ";
+          std::cin >> banyak;
+          std::cout << "\n\n";
+          cek_stock = peek(stock_kurma) - banyak;
+          if (cek_stock < 0)
+          cek_stock = 0;
+          stock_kurma = push(stock_kurma, new_element(cek_stock));
+          break;
+
+          case 3:
+          pop(stock_kurma);
+          std::cout << "\n\n";
+          break;
+
+          case 4:
+          std::cout << "Bye.." << "\n\n";
+          break;
+
+          default:
+          std::cout << "\nInput Salah!\n\n";
+          break;
+         }
+    }while (opsi != 4);
+}
+
+bool deleteStack (Node *top){
+  Node *curr;
+  while (top != nullptr){
+    curr = top->next;
+    delete top;
+    top = curr;
+  }
+  return 0;
 }
 
 // CASE 3 : PRIORTY QUEUE
