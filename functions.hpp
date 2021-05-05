@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
-#include <Windows.h>
+#include <windows.h>
+#include <iomanip>
+
 // CASE 1 : lINKED lIST
 
 struct node{
@@ -203,4 +205,14 @@ void loading()
     Sleep(100);
   }
   system("cls");
+}
+
+void tampilan_1() {
+  std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
+  std::cout << "\t TOKO KURMA BAROKAH AL-SWAGGIYAH" << std::endl;
+  std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
+  std::cout << "Daftar Kurma\n1. Kurma A\n2. Kurma B\n3. Kurma C" << std::endl;
+  std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
+  std::cout << "Daftar Menu\n1. Edit Data Kurma\n2. Cek Stock Kurma\n3. Penjualan Kurma" << std::endl;
+  std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
 }
