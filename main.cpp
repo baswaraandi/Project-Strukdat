@@ -13,9 +13,12 @@ int main() {
     std::string pil_edit_kurma3;
 
     // Stack
-    Stack stock_kurma_A;
-    Stack stock_kurma_B;
-    Stack stock_kurma_C;
+    Stack1 stock_kurma_A = nullptr;
+    Stack2 stock_kurma_B = nullptr;
+    Stack3 stock_kurma_C = nullptr;
+    createStack1(stock_kurma_A);
+    createStack2(stock_kurma_B);
+    createStack3(stock_kurma_C);
 
     int pil_menu;
     loading();
@@ -86,17 +89,17 @@ int main() {
                 switch (opsi_stack){
                     case 1:
                     loading();
-                    tampilan_edit_stock(stock_kurma_A);
+                    tampilan_edit_stock1(stock_kurma_A);
                     break;
 
                     case 2:
                     loading();
-                    tampilan_edit_stock(stock_kurma_B);
+                    tampilan_edit_stock2(stock_kurma_B);
                     break;
 
                     case 3:
                     loading();
-                    tampilan_edit_stock(stock_kurma_C);
+                    tampilan_edit_stock3(stock_kurma_C);
                     break;
 
                     case 4:

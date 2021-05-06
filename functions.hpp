@@ -77,40 +77,39 @@ void delete_by_key(list& head, list& p_delete, std::string key){
 
 // CASE 2 : Stack
 
-struct Node{
+struct Node1{
   int data;
-  Node *next;
+  Node1 *next;
 };
+typedef Node1 *pNode1;
+typedef pNode1 Stack1;
 
-typedef Node *pNode;
-typedef pNode Stack;
-
-Stack createStack(Stack& top){
+Stack1 createStack1(Stack1 top){
   top = nullptr;
   return top;
 }
 
-pNode new_element(int data){
-  pNode newElement = new Node;
+pNode1 new_element1(int data){
+  pNode1 newElement = new Node1;
   newElement->data = data;
   newElement->next = nullptr;
   return newElement;
 }
 
-bool isEmpty(Stack top){
+bool isEmpty1(Stack1 top){
   return top == nullptr;
 }
 
-int peek(Stack top){
-  if (isEmpty(top)){
+int peek1(Stack1 top){
+  if (isEmpty1(top)){
     return 0;
   }else{
     return top->data;
   }
 }
 
-Stack push(Stack top, pNode newElement){
-  if (isEmpty(top)){
+Stack1 push1(Stack1 top, pNode1 newElement){
+  if (isEmpty1(top)){
     top = newElement;
   }else{
     newElement->next = top;
@@ -119,9 +118,9 @@ Stack push(Stack top, pNode newElement){
   return top;
 }
 
-void pop(Stack &top){
-  pNode target;
-  if (isEmpty(top)){
+void pop1(Stack1 &top){
+  pNode1 target;
+  if (isEmpty1(top)){
     target = nullptr;
   }else if (top->next == nullptr){
     target = top;
@@ -134,8 +133,140 @@ void pop(Stack &top){
   delete target;
 }
 
-bool deleteStack (Node *top){
-  Node *curr;
+bool deleteStack1 (Node1 *top){
+  Node1 *curr;
+  while (top != nullptr){
+    curr = top->next;
+    delete top;
+    top = curr;
+  }
+  return 0;
+}
+
+struct Node2{
+  int data;
+  Node2 *next;
+};
+typedef Node2 *pNode2;
+typedef pNode2 Stack2;
+
+Stack2 createStack2(Stack2 top){
+  top = nullptr;
+  return top;
+}
+
+pNode2 new_element2(int data){
+  pNode2 newElement = new Node2;
+  newElement->data = data;
+  newElement->next = nullptr;
+  return newElement;
+}
+
+bool isEmpty2(Stack2 top){
+  return top == nullptr;
+}
+
+int peek2(Stack2 top){
+  if (isEmpty2(top)){
+    return 0;
+  }else{
+    return top->data;
+  }
+}
+
+Stack2 push2(Stack2 top, pNode2 newElement){
+  if (isEmpty2(top)){
+    top = newElement;
+  }else{
+    newElement->next = top;
+    top = newElement;
+  }
+  return top;
+}
+
+void pop2(Stack2 &top){
+  pNode2 target;
+  if (isEmpty2(top)){
+    target = nullptr;
+  }else if (top->next == nullptr){
+    target = top;
+    top = nullptr;
+  }else{
+    target = top;
+    top = top->next;
+    target->next = nullptr;
+  }
+  delete target;
+}
+
+bool deleteStack2(Node2 *top){
+  Node2 *curr;
+  while (top != nullptr){
+    curr = top->next;
+    delete top;
+    top = curr;
+  }
+  return 0;
+}
+
+struct Node3{
+  int data;
+  Node3 *next;
+};
+typedef Node3 *pNode3;
+typedef pNode3 Stack3;
+
+Stack3 createStack3(Stack3 top){
+  top = nullptr;
+  return top;
+}
+
+pNode3 new_element3(int data){
+  pNode3 newElement = new Node3;
+  newElement->data = data;
+  newElement->next = nullptr;
+  return newElement;
+}
+
+bool isEmpty3(Stack3 top){
+  return top == nullptr;
+}
+
+int peek3(Stack3 top){
+  if (isEmpty3(top)){
+    return 0;
+  }else{
+    return top->data;
+  }
+}
+
+Stack3 push3(Stack3 top, pNode3 newElement){
+  if (isEmpty3(top)){
+    top = newElement;
+  }else{
+    newElement->next = top;
+    top = newElement;
+  }
+  return top;
+}
+
+void pop3(Stack3 &top){
+  pNode3 target;
+  if (isEmpty3(top)){
+    target = nullptr;
+  }else if (top->next == nullptr){
+    target = top;
+    top = nullptr;
+  }else{
+    target = top;
+    top = top->next;
+    target->next = nullptr;
+  }
+  delete target;
+}
+
+bool deleteStack3(Node3 *top){
+  Node3 *curr;
   while (top != nullptr){
     curr = top->next;
     delete top;
@@ -146,13 +277,13 @@ bool deleteStack (Node *top){
 
 // CASE 3 : PRIORTY QUEUE
 
-struct Node2
+struct Node4
     {
       int data;
       int priority;
-      Node2 *next;
+      Node4 *next;
     };
-typedef Node2* element;
+typedef Node4* element;
 
 struct Queue
     {
@@ -167,7 +298,7 @@ void new_queue(Queue& Q){
 }
 
 void createElement(element& newElement, int data, int priority){
-    newElement = new Node2;
+    newElement = new Node4;
     newElement->data = data;
     newElement->priority = priority;
     newElement->next = nullptr;
