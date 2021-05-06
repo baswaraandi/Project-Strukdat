@@ -143,137 +143,137 @@ bool deleteStack1 (Node1 *top){
   return 0;
 }
 
-struct Node2{
-  int data;
-  Node2 *next;
-};
-typedef Node2 *pNode2;
-typedef pNode2 Stack2;
+// struct Node2{
+//   int data;
+//   Node2 *next;
+// };
+// typedef Node2 *pNode2;
+// typedef pNode2 Stack2;
 
-Stack2 createStack2(Stack2 top){
-  top = nullptr;
-  return top;
-}
+// Stack2 createStack2(Stack2 top){
+//   top = nullptr;
+//   return top;
+// }
 
-pNode2 new_element2(int data){
-  pNode2 newElement = new Node2;
-  newElement->data = data;
-  newElement->next = nullptr;
-  return newElement;
-}
+// pNode2 new_element2(int data){
+//   pNode2 newElement = new Node2;
+//   newElement->data = data;
+//   newElement->next = nullptr;
+//   return newElement;
+// }
 
-bool isEmpty2(Stack2 top){
-  return top == nullptr;
-}
+// bool isEmpty2(Stack2 top){
+//   return top == nullptr;
+// }
 
-int peek2(Stack2 top){
-  if (isEmpty2(top)){
-    return 0;
-  }else{
-    return top->data;
-  }
-}
+// int peek2(Stack2 top){
+//   if (isEmpty2(top)){
+//     return 0;
+//   }else{
+//     return top->data;
+//   }
+// }
 
-Stack2 push2(Stack2 top, pNode2 newElement){
-  if (isEmpty2(top)){
-    top = newElement;
-  }else{
-    newElement->next = top;
-    top = newElement;
-  }
-  return top;
-}
+// Stack2 push2(Stack2 top, pNode2 newElement){
+//   if (isEmpty2(top)){
+//     top = newElement;
+//   }else{
+//     newElement->next = top;
+//     top = newElement;
+//   }
+//   return top;
+// }
 
-void pop2(Stack2 &top){
-  pNode2 target;
-  if (isEmpty2(top)){
-    target = nullptr;
-  }else if (top->next == nullptr){
-    target = top;
-    top = nullptr;
-  }else{
-    target = top;
-    top = top->next;
-    target->next = nullptr;
-  }
-  delete target;
-}
+// void pop2(Stack2 &top){
+//   pNode2 target;
+//   if (isEmpty2(top)){
+//     target = nullptr;
+//   }else if (top->next == nullptr){
+//     target = top;
+//     top = nullptr;
+//   }else{
+//     target = top;
+//     top = top->next;
+//     target->next = nullptr;
+//   }
+//   delete target;
+// }
 
-bool deleteStack2(Node2 *top){
-  Node2 *curr;
-  while (top != nullptr){
-    curr = top->next;
-    delete top;
-    top = curr;
-  }
-  return 0;
-}
+// bool deleteStack2(Node2 *top){
+//   Node2 *curr;
+//   while (top != nullptr){
+//     curr = top->next;
+//     delete top;
+//     top = curr;
+//   }
+//   return 0;
+// }
 
-struct Node3{
-  int data;
-  Node3 *next;
-};
-typedef Node3 *pNode3;
-typedef pNode3 Stack3;
+// struct Node3{
+//   int data;
+//   Node3 *next;
+// };
+// typedef Node3 *pNode3;
+// typedef pNode3 Stack3;
 
-Stack3 createStack3(Stack3 top){
-  top = nullptr;
-  return top;
-}
+// Stack3 createStack3(Stack3 top){
+//   top = nullptr;
+//   return top;
+// }
 
-pNode3 new_element3(int data){
-  pNode3 newElement = new Node3;
-  newElement->data = data;
-  newElement->next = nullptr;
-  return newElement;
-}
+// pNode3 new_element3(int data){
+//   pNode3 newElement = new Node3;
+//   newElement->data = data;
+//   newElement->next = nullptr;
+//   return newElement;
+// }
 
-bool isEmpty3(Stack3 top){
-  return top == nullptr;
-}
+// bool isEmpty3(Stack3 top){
+//   return top == nullptr;
+// }
 
-int peek3(Stack3 top){
-  if (isEmpty3(top)){
-    return 0;
-  }else{
-    return top->data;
-  }
-}
+// int peek3(Stack3 top){
+//   if (isEmpty3(top)){
+//     return 0;
+//   }else{
+//     return top->data;
+//   }
+// }
 
-Stack3 push3(Stack3 top, pNode3 newElement){
-  if (isEmpty3(top)){
-    top = newElement;
-  }else{
-    newElement->next = top;
-    top = newElement;
-  }
-  return top;
-}
+// Stack3 push3(Stack3 top, pNode3 newElement){
+//   if (isEmpty3(top)){
+//     top = newElement;
+//   }else{
+//     newElement->next = top;
+//     top = newElement;
+//   }
+//   return top;
+// }
 
-void pop3(Stack3 &top){
-  pNode3 target;
-  if (isEmpty3(top)){
-    target = nullptr;
-  }else if (top->next == nullptr){
-    target = top;
-    top = nullptr;
-  }else{
-    target = top;
-    top = top->next;
-    target->next = nullptr;
-  }
-  delete target;
-}
+// void pop3(Stack3 &top){
+//   pNode3 target;
+//   if (isEmpty3(top)){
+//     target = nullptr;
+//   }else if (top->next == nullptr){
+//     target = top;
+//     top = nullptr;
+//   }else{
+//     target = top;
+//     top = top->next;
+//     target->next = nullptr;
+//   }
+//   delete target;
+// }
 
-bool deleteStack3(Node3 *top){
-  Node3 *curr;
-  while (top != nullptr){
-    curr = top->next;
-    delete top;
-    top = curr;
-  }
-  return 0;
-}
+// bool deleteStack3(Node3 *top){
+//   Node3 *curr;
+//   while (top != nullptr){
+//     curr = top->next;
+//     delete top;
+//     top = curr;
+//   }
+//   return 0;
+// }
 
 // CASE 3 : PRIORTY QUEUE
 

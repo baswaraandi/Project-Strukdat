@@ -14,11 +14,11 @@ int main() {
 
     // Stack
     Stack1 stock_kurma_A = nullptr;
-    Stack2 stock_kurma_B = nullptr;
-    Stack3 stock_kurma_C = nullptr;
+    Stack1 stock_kurma_B = nullptr;
+    Stack1 stock_kurma_C = nullptr;
     createStack1(stock_kurma_A);
-    createStack2(stock_kurma_B);
-    createStack3(stock_kurma_C);
+    createStack1(stock_kurma_B);
+    createStack1(stock_kurma_C);
 
     int pil_menu;
     loading();
@@ -94,12 +94,12 @@ int main() {
 
                     case 2:
                     loading();
-                    tampilan_edit_stock2(stock_kurma_B);
+                    tampilan_edit_stock1(stock_kurma_B);
                     break;
 
                     case 3:
                     loading();
-                    tampilan_edit_stock3(stock_kurma_C);
+                    tampilan_edit_stock1(stock_kurma_C);
                     break;
 
                     case 4:
