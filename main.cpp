@@ -19,7 +19,11 @@ int main() {
     createStack1(stock_kurma_A);
     createStack1(stock_kurma_B);
     createStack1(stock_kurma_C);
-
+    
+    //Queue
+    element pHelp = Q.Head;
+    element newElement, pDel;
+    
     int pil_menu;
     loading();
     do {
@@ -122,7 +126,24 @@ int main() {
 
             case 3:
             loading();
-            tampilan_penjualan();
+            new_queue(Q);
+            createElement(newElement, 300, 2, "Ajwa");
+            enQueue(Q, newElement);
+            createElement(newElement, 50, 1, "Sukari Al-Qassim");
+            enQueue(Q, newElement);
+            createElement(newElement, 100, 3, "Sukari Deluxe");
+            enQueue(Q, newElement);
+
+            if (!isEmpty(Q))
+            {
+                do
+                {
+                    std::cout << pHelp->data << " : " << pHelp->priority << std::endl;
+                    pHelp = pHelp->next;
+                } while (pHelp == nullptr);
+                
+            }
+            //tampilan_penjualan();
             break;
 
             case 4:

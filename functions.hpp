@@ -147,7 +147,8 @@ bool deleteStack1 (Node1 *top){
 
 struct Node4
     {
-      int data;
+      std::string data;
+      int stock;
       int priority;
       Node4 *next;
     };
@@ -165,15 +166,16 @@ void new_queue(Queue& Q){
     Q.Tail = nullptr;
 }
 
-void createElement(element& newElement, int data, int priority){
+void createElement(element& newElement, int stock, int priority, std::string data){
     newElement = new Node4;
-    newElement->data = data;
+    newElement->stock = stock;
     newElement->priority = priority;
+    newElement->data = data;
     newElement->next = nullptr;
 }
 
 int front(Queue Q){
-    return Q.Head->data;
+    return Q.Head->stock;
 }
 
 bool isEmpty(Queue Q){
@@ -182,4 +184,43 @@ bool isEmpty(Queue Q){
     }else{
         return false;
     }
+}
+
+void enQueue(Queue& Q, element newElement){
+  element pRev = nullptr;
+  element pHelp = Q.Head;
+  if(isEmpty(Q))
+  {
+    Q.Head = newElement;
+    Q.Tail = newElement;
+  }
+  else
+  {
+    while (newElement->priority >= pHelp->priority)
+    {
+      if (pHelp->next == nullptr)
+      break;
+      pRev = pHelp;
+      pHelp= pHelp->next;
+    }
+    if (pHelp == Q.Head && newElement->priority < pHelp->priority)
+    {
+      newElement->next = pHelp;
+      Q.Head = newElement;
+    }
+    else if (pHelp == Q.Tail && newElement->priority > pHelp->priority)
+    {
+      pHelp->next = newElement;
+      Q.Tail = newElement;
+    }
+    else
+    {
+      pHelp->next = newElement;
+      newElement->next = pHelp; 
+    }
+  }
+}
+
+void dequeue(Queue& Q, element newElement){
+  
 }
