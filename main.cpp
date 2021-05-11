@@ -133,6 +133,7 @@ int main() {
             enQueue(Q, newElement);
             createElement(newElement, 100, 3, "Sukari Deluxe");
             enQueue(Q, newElement);
+            dequeue(Q, pDel);
 
             if (!isEmpty(Q))
             {

@@ -221,6 +221,16 @@ void enQueue(Queue& Q, element newElement){
   }
 }
 
-void dequeue(Queue& Q, element newElement){
-  
+void dequeue(Queue& Q, element delElement){
+  if (isEmpty(Q)) {
+    delElement = nullptr;
+  } else if (Q.Head->next = nullptr) {
+    delElement = Q.Head;
+    Q.Head = nullptr;
+    Q.Head = nullptr;
+  } else {
+    delElement = Q.Head;
+    Q.Head = Q.Head->next;
+    delElement->next = nullptr;
+  }
 }
