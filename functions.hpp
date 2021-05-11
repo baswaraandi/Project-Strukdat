@@ -15,7 +15,7 @@ typedef pointer list;
 void traversal(list head){
   pointer curr = head;
   while(curr != nullptr){
-    std::cout << curr->data << " ";
+    std::cout << curr->data << "\n";
     curr = curr -> next;
   }
   std::cout << '\n';

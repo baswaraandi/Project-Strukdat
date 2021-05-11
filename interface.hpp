@@ -18,15 +18,17 @@ void loading()
     system("cls");
 }
 
+
 void tampilan_awal() {
     std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
     std::cout << "\t TOKO KURMA BAROKAH AL-SWAGGIYAH" << std::endl;
     std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
-    std::cout << "Daftar Kurma\n1. Kurma A\n2. Kurma B\n3. Kurma C" << std::endl;
+    std::cout << "Daftar Kurma\n1. Kurma Ajwa\n2. Kurma Sukari Al-Qassim\n3. Kurma Sukari Deluxe" << std::endl;
     std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
     std::cout << "Daftar Menu\n1. Edit Data Kurma\n2. Cek Stock Kurma\n3. Penjualan Kurma\n4. Exit" << std::endl;
     std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
 }
+
 
 void tampilan_edit() {
     std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
@@ -42,7 +44,7 @@ void tampilan_cek_stock() {
     std::cout << "\t\t   Stock Kurma" << std::endl;
     std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
     std::cout << "Daftar Stock" << std::endl;
-    std::cout << "1. Kurma A\n2. Kurma B\n3. Kurma C\n4. Kembali" << std::endl;
+    std::cout << "1. Kurma Ajwa\n2. Kurma Sukari Al-Qassim\n3. Kurma Sukari Deluxe\n4. Kembali" << std::endl;
     std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
 }
 

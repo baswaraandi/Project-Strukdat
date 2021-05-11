@@ -6,8 +6,8 @@ int main() {
     pointer pBantu;
     pointer p_delete;
     new_element(first, "Ajwa");
-    insert_last(first, "Sukari");
-    insert_last(first, "Peler");
+    insert_last(first, "Sukari_Al-Qassim");
+    insert_last(first, "Sukari_Deluxe");
     std::string pil_edit_kurma1;
     std::string pil_edit_kurma2;
     std::string pil_edit_kurma3;
@@ -30,16 +30,20 @@ int main() {
             int opsi_linked;
             loading();
             do {
+                std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
+                std::cout << "\t TOKO KURMA BAROKAH AL-SWAGGIYAH" << std::endl;
+                std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
+                traversal(first);
                 tampilan_edit();
                 std::cout << "Masukin Nomor Menu\t: "; std::cin >> opsi_linked;
                 switch(opsi_linked){
                     case 1:
-                    std::cout << "Masukkan Nama Kurma\t: "; std::cin >> pil_edit_kurma1;
+                    std::cout << "Masukkan Nama Kurma (Spasi Gunakan Underscore!)\t: "; std::cin >> pil_edit_kurma1;
                     search(first, pBantu , pil_edit_kurma1);
                     if (pBantu != nullptr){
-                        std::cout << "Data Ada! JING !!";
+                        std::cout << "Data Ditemukan!!";
                     } else {
-                        std::cout << "Eweuh GBLK";
+                        std::cout << "Data Tidak Ditemukan!!";
                     }
                     std::cout << "\n\n";
                     system("pause");
@@ -49,7 +53,7 @@ int main() {
                     case 2:
                     std::cout << "Masukkan Nama Kurma\t: "; std::cin >> pil_edit_kurma2;
                     insert_last(first, pil_edit_kurma2);
-                    std::cout << "Daftar Kurma Saat ini\t: ";
+                    std::cout << "Daftar Kurma Saat ini\t: " << '\n';
                     traversal(first);
                     std::cout << "\n";
                     system("pause");
@@ -59,7 +63,7 @@ int main() {
                     case 3:
                     std::cout << "Masukkan Nama Kurma\t: "; std::cin >> pil_edit_kurma3;
                     delete_by_key(first, p_delete, pil_edit_kurma3);
-                    std::cout << "Daftar Kurma Saat ini\t: ";
+                    std::cout << "Daftar Kurma Saat ini\t: " << '\n';
                     traversal(first);
                     std::cout << "\n";
                     system("pause");
