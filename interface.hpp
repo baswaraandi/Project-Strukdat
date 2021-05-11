@@ -18,15 +18,16 @@ void loading()
     system("cls");
 }
 
-void tampilan_awal() {
-    std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
-    std::cout << "\t TOKO KURMA BAROKAH AL-SWAGGIYAH" << std::endl;
-    std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
-    std::cout << "Daftar Kurma\n1. Kurma A\n2. Kurma B\n3. Kurma C" << std::endl;
-    std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
-    std::cout << "Daftar Menu\n1. Edit Data Kurma\n2. Cek Stock Kurma\n3. Penjualan Kurma\n4. Exit" << std::endl;
-    std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
-}
+// void tampilan_awal(list &head) {
+//     head = nullptr;
+//     std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
+//     std::cout << "\t TOKO KURMA BAROKAH AL-SWAGGIYAH" << std::endl;
+//     std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
+//     traversal(head);
+//     std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
+//     std::cout << "Daftar Menu\n1. Edit Data Kurma\n2. Cek Stock Kurma\n3. Penjualan Kurma\n4. Exit" << std::endl;
+//     std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
+// }
 
 void tampilan_edit() {
     std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
@@ -42,7 +43,7 @@ void tampilan_cek_stock() {
     std::cout << "\t\t   Stock Kurma" << std::endl;
     std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
     std::cout << "Daftar Stock" << std::endl;
-    std::cout << "1. Kurma A\n2. Kurma B\n3. Kurma C\n4. Kembali" << std::endl;
+    std::cout << "1. Kurma Ajwa\n2. Kurma Sukari Al-Qassim\n3. Kurma Sukari Deluxe\n4. Kembali" << std::endl;
     std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
 }
 
@@ -98,108 +99,108 @@ void tampilan_edit_stock1 (Stack1& stock_kurma) {
     } while (opsi != 4);
 }
 
-void tampilan_edit_stock2 (Stack2& stock_kurma) {
-    int banyak, opsi, cek_stock;
-    do {
-        std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
-        std::cout << "\t\t Edit Stock Kurma" << std::endl;
-        std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
-        std::cout << "Stok Kurma : " << peek2(stock_kurma) << " Kg" << '\n';
-        std::cout << "Daftar Edit" << std::endl;
-        std::cout << "1. Tambah Stock\n2. Kurang Stock\n3. Undo\n4. Kembali" << std::endl;
-        std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
-        std::cout << "Opsi\t\t\t: "; std::cin >> opsi;
-        switch (opsi){
-            case 1:
-            std::cout << "Tambahkan berapa ?\t: ";
-            std::cin >> banyak;
-            std::cout << "\n";
-            stock_kurma = push2(stock_kurma, new_element2(peek2(stock_kurma) + banyak));
-            system("pause");
-            system("cls");
-            break;
+// void tampilan_edit_stock2 (Stack2& stock_kurma) {
+//     int banyak, opsi, cek_stock;
+//     do {
+//         std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
+//         std::cout << "\t\t Edit Stock Kurma" << std::endl;
+//         std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
+//         std::cout << "Stok Kurma : " << peek2(stock_kurma) << " Kg" << '\n';
+//         std::cout << "Daftar Edit" << std::endl;
+//         std::cout << "1. Tambah Stock\n2. Kurang Stock\n3. Undo\n4. Kembali" << std::endl;
+//         std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
+//         std::cout << "Opsi\t\t\t: "; std::cin >> opsi;
+//         switch (opsi){
+//             case 1:
+//             std::cout << "Tambahkan berapa ?\t: ";
+//             std::cin >> banyak;
+//             std::cout << "\n";
+//             stock_kurma = push2(stock_kurma, new_element2(peek2(stock_kurma) + banyak));
+//             system("pause");
+//             system("cls");
+//             break;
 
-            case 2:
-            std::cout << "Kurangi berapa ?\t: ";
-            std::cin >> banyak;
-            std::cout << "\n";
-            cek_stock = peek2(stock_kurma) - banyak;
-            if (cek_stock < 0)
-            cek_stock = 0;
-            stock_kurma = push2(stock_kurma, new_element2(cek_stock));
-            system("pause");
-            system("cls");
-            break;
+//             case 2:
+//             std::cout << "Kurangi berapa ?\t: ";
+//             std::cin >> banyak;
+//             std::cout << "\n";
+//             cek_stock = peek2(stock_kurma) - banyak;
+//             if (cek_stock < 0)
+//             cek_stock = 0;
+//             stock_kurma = push2(stock_kurma, new_element2(cek_stock));
+//             system("pause");
+//             system("cls");
+//             break;
 
-            case 3:
-            pop2(stock_kurma);
-            system("cls");
-            break;
+//             case 3:
+//             pop2(stock_kurma);
+//             system("cls");
+//             break;
 
-            case 4:
-            system("cls");
-            break;
+//             case 4:
+//             system("cls");
+//             break;
 
-            default:
-            system("cls");
-            std::cout << "Input Salah!\n\n";
-            system("pause");
-            system("cls");
-            break;
-        }
-    } while (opsi != 4);
-}
-void tampilan_edit_stock3 (Stack3& stock_kurma) {
-    int banyak, opsi, cek_stock;
-    do {
-        std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
-        std::cout << "\t\t Edit Stock Kurma" << std::endl;
-        std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
-        std::cout << "Stok Kurma : " << peek3(stock_kurma) << " Kg" << '\n';
-        std::cout << "Daftar Edit" << std::endl;
-        std::cout << "1. Tambah Stock\n2. Kurang Stock\n3. Undo\n4. Kembali" << std::endl;
-        std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
-        std::cout << "Opsi\t\t\t: "; std::cin >> opsi;
-        switch (opsi){
-            case 1:
-            std::cout << "Tambahkan berapa ?\t: ";
-            std::cin >> banyak;
-            std::cout << "\n";
-            stock_kurma = push3(stock_kurma, new_element3(peek3(stock_kurma) + banyak));
-            system("pause");
-            system("cls");
-            break;
+//             default:
+//             system("cls");
+//             std::cout << "Input Salah!\n\n";
+//             system("pause");
+//             system("cls");
+//             break;
+//         }
+//     } while (opsi != 4);
+// }
+// void tampilan_edit_stock3 (Stack3& stock_kurma) {
+//     int banyak, opsi, cek_stock;
+//     do {
+//         std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
+//         std::cout << "\t\t Edit Stock Kurma" << std::endl;
+//         std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
+//         std::cout << "Stok Kurma : " << peek3(stock_kurma) << " Kg" << '\n';
+//         std::cout << "Daftar Edit" << std::endl;
+//         std::cout << "1. Tambah Stock\n2. Kurang Stock\n3. Undo\n4. Kembali" << std::endl;
+//         std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
+//         std::cout << "Opsi\t\t\t: "; std::cin >> opsi;
+//         switch (opsi){
+//             case 1:
+//             std::cout << "Tambahkan berapa ?\t: ";
+//             std::cin >> banyak;
+//             std::cout << "\n";
+//             stock_kurma = push3(stock_kurma, new_element3(peek3(stock_kurma) + banyak));
+//             system("pause");
+//             system("cls");
+//             break;
 
-            case 2:
-            std::cout << "Kurangi berapa ?\t: ";
-            std::cin >> banyak;
-            std::cout << "\n";
-            cek_stock = peek3(stock_kurma) - banyak;
-            if (cek_stock < 0)
-            cek_stock = 0;
-            stock_kurma = push3(stock_kurma, new_element3(cek_stock));
-            system("pause");
-            system("cls");
-            break;
+//             case 2:
+//             std::cout << "Kurangi berapa ?\t: ";
+//             std::cin >> banyak;
+//             std::cout << "\n";
+//             cek_stock = peek3(stock_kurma) - banyak;
+//             if (cek_stock < 0)
+//             cek_stock = 0;
+//             stock_kurma = push3(stock_kurma, new_element3(cek_stock));
+//             system("pause");
+//             system("cls");
+//             break;
 
-            case 3:
-            pop3(stock_kurma);
-            system("cls");
-            break;
+//             case 3:
+//             pop3(stock_kurma);
+//             system("cls");
+//             break;
 
-            case 4:
-            system("cls");
-            break;
+//             case 4:
+//             system("cls");
+//             break;
 
-            default:
-            system("cls");
-            std::cout << "Input Salah!\n\n";
-            system("pause");
-            system("cls");
-            break;
-        }
-    } while (opsi != 4);
-}
+//             default:
+//             system("cls");
+//             std::cout << "Input Salah!\n\n";
+//             system("pause");
+//             system("cls");
+//             break;
+//         }
+//     } while (opsi != 4);
+// }
 
 void tampilan_penjualan() {
     std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
