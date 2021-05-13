@@ -12,13 +12,12 @@ struct node{
 typedef node* pointer;
 typedef pointer list;
   
-void traversal(list head){
+void traversal(list& head){
   pointer curr = head;
   while(curr != nullptr){
     std::cout << curr->data << "\n";
     curr = curr -> next;
   }
-  std::cout << '\n';
 }
 
 void new_element(list &pBaru, std::string Data){
@@ -75,41 +74,51 @@ void delete_by_key(list& head, list& p_delete, std::string key){
     }
 }
 
+int jumlah_data(list& head) {
+  pointer p_help = head;
+  int jumlah = 0;
+  while (p_help != nullptr) {
+    p_help = p_help->next;
+    jumlah++;
+  }
+  return jumlah;
+}
+
 // CASE 2 : Stack
 
-struct Node1{
+struct Node_Stack{
   int data;
-  Node1 *next;
+  Node_Stack *next;
 };
-typedef Node1 *pNode1;
-typedef pNode1 Stack1;
+typedef Node_Stack *pNode;
+typedef pNode Stack;
 
-Stack1 createStack1(Stack1 top){
+Stack createStack(Stack top){
   top = nullptr;
   return top;
 }
 
-pNode1 new_element1(int data){
-  pNode1 newElement = new Node1;
+pNode new_element(int data){
+  pNode newElement = new Node_Stack;
   newElement->data = data;
   newElement->next = nullptr;
   return newElement;
 }
 
-bool isEmpty1(Stack1 top){
+bool isEmpty(Stack top){
   return top == nullptr;
 }
 
-int peek1(Stack1 top){
-  if (isEmpty1(top)){
+int peek(Stack top){
+  if (isEmpty(top)){
     return 0;
   }else{
     return top->data;
   }
 }
 
-Stack1 push1(Stack1 top, pNode1 newElement){
-  if (isEmpty1(top)){
+Stack push(Stack top, pNode newElement){
+  if (isEmpty(top)){
     top = newElement;
   }else{
     newElement->next = top;
@@ -118,9 +127,9 @@ Stack1 push1(Stack1 top, pNode1 newElement){
   return top;
 }
 
-void pop1(Stack1 &top){
-  pNode1 target;
-  if (isEmpty1(top)){
+void pop(Stack &top){
+  pNode target;
+  if (isEmpty(top)){
     target = nullptr;
   }else if (top->next == nullptr){
     target = top;
@@ -133,8 +142,8 @@ void pop1(Stack1 &top){
   delete target;
 }
 
-bool deleteStack1 (Node1 *top){
-  Node1 *curr;
+bool deleteStack(Node_Stack *top){
+  Node_Stack *curr;
   while (top != nullptr){
     curr = top->next;
     delete top;

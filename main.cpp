@@ -13,12 +13,12 @@ int main() {
     std::string pil_edit_kurma3;
 
     // Stack
-    Stack1 stock_kurma_A = nullptr;
-    Stack1 stock_kurma_B = nullptr;
-    Stack1 stock_kurma_C = nullptr;
-    createStack1(stock_kurma_A);
-    createStack1(stock_kurma_B);
-    createStack1(stock_kurma_C);
+    Stack stock_kurma_A = nullptr;
+    Stack stock_kurma_B = nullptr;
+    Stack stock_kurma_C = nullptr;
+    createStack(stock_kurma_A);
+    createStack(stock_kurma_B);
+    createStack(stock_kurma_C);
     
     //Queue
     element pHelp = Q.Head;
@@ -34,42 +34,39 @@ int main() {
             int opsi_linked;
             loading();
             do {
-                std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
-                std::cout << "\t TOKO KURMA BAROKAH AL-SWAGGIYAH" << std::endl;
-                std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
-                traversal(first);
-                tampilan_edit();
-                std::cout << "Masukin Nomor Menu\t: "; std::cin >> opsi_linked;
+                tampilan_cek_data();
+                std::cout << "Masukkan Nomor Menu\t: "; std::cin >> opsi_linked;
                 switch(opsi_linked){
                     case 1:
-                    std::cout << "Masukkan Nama Kurma (Spasi Gunakan Underscore!)\t: "; std::cin >> pil_edit_kurma1;
+                    loading();
+                    std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
+                    std::cout << "\t\t DAFTAR KURMA\n";
+                    std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
+                    traversal(first);
+                    std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
+                    system("pause");
+                    system("cls");
+                    break;
+
+                    case 2:
+                    system("cls");
+                    std::cout << "Masukkan Nama Kurma (Gunakan Underscore) : "; std::cin >> pil_edit_kurma1;
                     search(first, pBantu , pil_edit_kurma1);
+                    loading();
                     if (pBantu != nullptr){
-                        std::cout << "Data Ditemukan!!";
+                        std::cout << "Data Ditemukan!";
                     } else {
-                        std::cout << "Data Tidak Ditemukan!!";
+                        std::cout << "Data Tidak Ditemukan!";
                     }
                     std::cout << "\n\n";
                     system("pause");
                     system("cls");
                     break;
 
-                    case 2:
-                    std::cout << "Masukkan Nama Kurma\t: "; std::cin >> pil_edit_kurma2;
-                    insert_last(first, pil_edit_kurma2);
-                    std::cout << "Daftar Kurma Saat ini\t: " << '\n';
-                    traversal(first);
-                    std::cout << "\n";
-                    system("pause");
-                    system("cls");
-                    break;
-
                     case 3:
-                    std::cout << "Masukkan Nama Kurma\t: "; std::cin >> pil_edit_kurma3;
-                    delete_by_key(first, p_delete, pil_edit_kurma3);
-                    std::cout << "Daftar Kurma Saat ini\t: " << '\n';
-                    traversal(first);
-                    std::cout << "\n";
+                    loading();
+                    std::cout << "Jumlah Data : " << jumlah_data(first) << " Kurma";
+                    std::cout << "\n\n";
                     system("pause");
                     system("cls");
                     break;
@@ -79,7 +76,7 @@ int main() {
                     break;
 
                     default:
-                    system("cls");
+                    loading();
                     std::cout << "Input Salah!\n\n";
                     system("pause");
                     system("cls");
@@ -97,17 +94,17 @@ int main() {
                 switch (opsi_stack){
                     case 1:
                     loading();
-                    tampilan_edit_stock1(stock_kurma_A);
+                    tampilan_edit_stock(stock_kurma_A);
                     break;
 
                     case 2:
                     loading();
-                    tampilan_edit_stock1(stock_kurma_B);
+                    tampilan_edit_stock(stock_kurma_B);
                     break;
 
                     case 3:
                     loading();
-                    tampilan_edit_stock1(stock_kurma_C);
+                    tampilan_edit_stock(stock_kurma_C);
                     break;
 
                     case 4:
@@ -115,7 +112,7 @@ int main() {
                     break;
 
                     default:
-                    system("cls");
+                    loading();
                     std::cout << "Input Salah!\n\n";
                     system("pause");
                     system("cls");
@@ -149,12 +146,12 @@ int main() {
 
             case 4:
             system("cls");
-            std::cout << "BYE" << std::endl;
+            std::cout << "Good Bye! Have A Good Day!" << std::endl;
             exit(0);
             break;
 
             default:
-            system("cls");
+            loading();
             std::cout << "\nInput Salah!\n\n";
             system("pause");
             system("cls");
