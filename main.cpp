@@ -20,9 +20,8 @@ int main() {
     createStack(stock_kurma_B);
     createStack(stock_kurma_C);
     
-    //Queue
-    element pHelp = Q.Head;
-    element newElement, pDel;
+    // Queue
+    Queue q;
     
     int pil_menu;
     loading();
@@ -35,13 +34,12 @@ int main() {
             loading();
             do {
                 tampilan_cek_data();
-                std::cout << "Masukkan Nomor Menu\t: "; std::cin >> opsi_linked;
+                std::cout << "Masukin Nomor Menu\t: "; std::cin >> opsi_linked;
                 switch(opsi_linked){
                     case 1:
-                    loading();
+                    system("cls");
                     std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
                     std::cout << "\t\t DAFTAR KURMA\n";
-                    std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
                     traversal(first);
                     std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
                     system("pause");
@@ -49,14 +47,13 @@ int main() {
                     break;
 
                     case 2:
-                    system("cls");
-                    std::cout << "Masukkan Nama Kurma (Gunakan Underscore) : "; std::cin >> pil_edit_kurma1;
+                    std::cout << "Masukkan Nama Kurma (Spasi Gunakan Underscore!)\t: "; std::cin >> pil_edit_kurma1;
                     search(first, pBantu , pil_edit_kurma1);
-                    loading();
+                    system("cls");
                     if (pBantu != nullptr){
-                        std::cout << "Data Ditemukan!";
+                        std::cout << "Data Ditemukan!!";
                     } else {
-                        std::cout << "Data Tidak Ditemukan!";
+                        std::cout << "Data Tidak Ditemukan!!";
                     }
                     std::cout << "\n\n";
                     system("pause");
@@ -64,7 +61,7 @@ int main() {
                     break;
 
                     case 3:
-                    loading();
+                    system("cls");
                     std::cout << "Jumlah Data : " << jumlah_data(first) << " Kurma";
                     std::cout << "\n\n";
                     system("pause");
@@ -76,7 +73,7 @@ int main() {
                     break;
 
                     default:
-                    loading();
+                    system("cls");
                     std::cout << "Input Salah!\n\n";
                     system("pause");
                     system("cls");
@@ -112,7 +109,7 @@ int main() {
                     break;
 
                     default:
-                    loading();
+                    system("cls");
                     std::cout << "Input Salah!\n\n";
                     system("pause");
                     system("cls");
@@ -123,35 +120,25 @@ int main() {
 
             case 3:
             loading();
-            new_queue(Q);
-            createElement(newElement, 300, 2, "Ajwa");
-            enQueue(Q, newElement);
-            createElement(newElement, 50, 1, "Sukari Al-Qassim");
-            enQueue(Q, newElement);
-            createElement(newElement, 100, 3, "Sukari Deluxe");
-            enQueue(Q, newElement);
-            dequeue(Q, pDel);
+            new_queue(q);
+            enqueue(q, 300, 1);
+            enqueue(q, 350, 3);
+            enqueue(q, 50, 2);
 
-            if (!isEmpty(Q))
-            {
-                do
-                {
-                    std::cout << pHelp->data << " : " << pHelp->priority << std::endl;
-                    pHelp = pHelp->next;
-                } while (pHelp == nullptr);
-                
-            }
-            //tampilan_penjualan();
+            print_queue(q);
+            std::cout << "\n";
+            system("pause");
+            system("cls");
             break;
 
             case 4:
             system("cls");
-            std::cout << "Good Bye! Have A Good Day!" << std::endl;
+            std::cout << "BYE" << std::endl;
             exit(0);
             break;
 
             default:
-            loading();
+            system("cls");
             std::cout << "\nInput Salah!\n\n";
             system("pause");
             system("cls");

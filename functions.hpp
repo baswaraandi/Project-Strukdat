@@ -154,92 +154,97 @@ bool deleteStack(Node_Stack *top){
 
 // CASE 3 : PRIORTY QUEUE
 
-struct Node4
+struct Element
     {
-      std::string data;
-      int stock;
+      int data;
       int priority;
-      Node4 *next;
+      Element *next;
     };
-typedef Node4* element;
+    using ElementPtr = Element*;
 
 struct Queue
     {
-    element Head;
-    element Tail;
+    ElementPtr head;
+    ElementPtr tail;
     };
-Queue Q;
 
-void new_queue(Queue& Q){
-    Q.Head = nullptr;
-    Q.Tail = nullptr;
+void new_queue(Queue &q) {
+    q.head = nullptr;
+    q.tail = nullptr;
 }
 
-void createElement(element& newElement, int stock, int priority, std::string data){
-    newElement = new Node4;
-    newElement->stock = stock;
-    newElement->priority = priority;
-    newElement->data = data;
-    newElement->next = nullptr;
-}
-
-int front(Queue Q){
-    return Q.Head->stock;
-}
-
-bool isEmpty(Queue Q){
-    if(Q.Head == nullptr && Q.Tail == nullptr){
-        return true;
-    }else{
-        return false;
-    }
-}
-
-void enQueue(Queue& Q, element newElement){
-  element pRev = nullptr;
-  element pHelp = Q.Head;
-  if(isEmpty(Q))
+void enqueue(Queue &q, int stock, int priority) {
+  ElementPtr p_rev = nullptr;
+  ElementPtr p_help = q.head;
+  ElementPtr new_element = new Element;
+  new_element->data = stock;
+  new_element->priority = priority;
+  new_element->next = nullptr;
+  if (q.head == nullptr && q.tail == nullptr) 
   {
-    Q.Head = newElement;
-    Q.Tail = newElement;
-  }
-  else
+    q.head = new_element;
+    q.tail = new_element;
+  } 
+  else 
   {
-    while (newElement->priority >= pHelp->priority)
+    while (new_element->priority <= p_help->priority) 
     {
-      if (pHelp->next == nullptr)
+      if (p_help->next == nullptr) 
       break;
-      pRev = pHelp;
-      pHelp= pHelp->next;
+      p_rev = p_help;
+      p_help = p_help->next;
     }
-    if (pHelp == Q.Head && newElement->priority < pHelp->priority)
+    if (p_help == q.head && new_element->priority > p_help->priority)
     {
-      newElement->next = pHelp;
-      Q.Head = newElement;
+      new_element->next = p_help;
+      q.head = new_element;
     }
-    else if (pHelp == Q.Tail && newElement->priority > pHelp->priority)
+    else if (p_help == q.tail && new_element->priority < p_help->priority)
     {
-      pHelp->next = newElement;
-      Q.Tail = newElement;
+      p_help->next = new_element;
+      q.tail = new_element;
     }
     else
     {
-      pHelp->next = newElement;
-      newElement->next = pHelp; 
+      p_rev->next = new_element;
+      new_element->next = p_help;
     }
   }
 }
 
-void dequeue(Queue& Q, element delElement){
-  if (isEmpty(Q)) {
-    delElement = nullptr;
-  } else if (Q.Head->next = nullptr) {
-    delElement = Q.Head;
-    Q.Head = nullptr;
-    Q.Head = nullptr;
-  } else {
-    delElement = Q.Head;
-    Q.Head = Q.Head->next;
-    delElement->next = nullptr;
+int top (Queue &q) {
+  return q.head->data;
+}
+
+void dequeue(Queue &q) {
+  ElementPtr del_element;
+  if (q.head == nullptr and q.tail == nullptr)
+  {
+    del_element = nullptr;
+  }
+  else if (q.head->next == nullptr)
+  {
+    del_element = q.head;
+    q.head = nullptr;
+    q.tail = nullptr;
+  }
+  else
+  {
+    del_element = q.head;
+    q.head = q.head->next;
+    del_element->next = nullptr;
+  }
+  delete del_element;
+}
+
+void print_queue(Queue &q) {
+  ElementPtr p_help = q.head;
+  if (q.head != nullptr && q.tail != nullptr)
+  {
+      do
+      {
+      std::cout << p_help->data << " : " << p_help->priority << std::endl;
+      p_help = p_help->next;
+      } while (p_help != nullptr);
   }
 }

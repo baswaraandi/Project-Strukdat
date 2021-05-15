@@ -18,12 +18,11 @@ void loading()
     system("cls");
 }
 
-
 void tampilan_awal() {
     std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
     std::cout << "\t TOKO KURMA BAROKAH AL-SWAGGIYAH" << std::endl;
     std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
-    std::cout << "Daftar Menu\n1. Cek Data Kurma\n2. Cek Stock Kurma\n3. Penjualan Kurma\n4. Exit Program" << std::endl;
+    std::cout << "Daftar Menu\n1. Cek Data Kurma\n2. Cek Stock Kurma\n3. Penjualan Kurma\n4. Exit" << std::endl;
     std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
 }
 
@@ -56,32 +55,32 @@ void tampilan_edit_stock (Stack& stock_kurma) {
         std::cout << "Daftar Edit" << std::endl;
         std::cout << "1. Tambah Stock\n2. Kurang Stock\n3. Undo\n4. Kembali" << std::endl;
         std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
-        std::cout << "Opsi\t: "; std::cin >> opsi;
+        std::cout << "Opsi\t\t\t: "; std::cin >> opsi;
         switch (opsi){
             case 1:
-            system("cls");
-            std::cout << "Tambahkan berapa (Kg) ?\t: ";
+            std::cout << "Tambahkan berapa ?\t: ";
             std::cin >> banyak;
             std::cout << "\n";
             stock_kurma = push(stock_kurma, new_element(peek(stock_kurma) + banyak));
-            loading();
+            system("pause");
+            system("cls");
             break;
 
             case 2:
-            system("cls");
-            std::cout << "Kurangi berapa (Kg) ?\t: ";
+            std::cout << "Kurangi berapa ?\t: ";
             std::cin >> banyak;
             std::cout << "\n";
             cek_stock = peek(stock_kurma) - banyak;
             if (cek_stock < 0)
             cek_stock = 0;
             stock_kurma = push(stock_kurma, new_element(cek_stock));
-            loading();
+            system("pause");
+            system("cls");
             break;
 
             case 3:
-            loading();
             pop(stock_kurma);
+            system("cls");
             break;
 
             case 4:
@@ -89,7 +88,7 @@ void tampilan_edit_stock (Stack& stock_kurma) {
             break;
 
             default:
-            loading();
+            system("cls");
             std::cout << "Input Salah!\n\n";
             system("pause");
             system("cls");
