@@ -22,6 +22,9 @@ int main() {
     
     // Queue
     Queue q;
+    int stock1, stock2, stock3;
+    int kualitas1, kualitas2, kualitas3;
+    std::string kurma1, kurma2, kurma3;
     
     int pil_menu;
     loading();
@@ -34,12 +37,13 @@ int main() {
             loading();
             do {
                 tampilan_cek_data();
-                std::cout << "Masukin Nomor Menu\t: "; std::cin >> opsi_linked;
+                std::cout << "Masukkan Nomor Menu\t: "; std::cin >> opsi_linked;
                 switch(opsi_linked){
                     case 1:
-                    system("cls");
+                    loading();
                     std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
                     std::cout << "\t\t DAFTAR KURMA\n";
+                    std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
                     traversal(first);
                     std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
                     system("pause");
@@ -47,13 +51,14 @@ int main() {
                     break;
 
                     case 2:
-                    std::cout << "Masukkan Nama Kurma (Spasi Gunakan Underscore!)\t: "; std::cin >> pil_edit_kurma1;
-                    search(first, pBantu , pil_edit_kurma1);
                     system("cls");
+                    std::cout << "Masukkan Nama Kurma\t: "; std::cin >> pil_edit_kurma1;
+                    search(first, pBantu , pil_edit_kurma1);
+                    loading();
                     if (pBantu != nullptr){
-                        std::cout << "Data Ditemukan!!";
+                        std::cout << "Data Ditemukan!";
                     } else {
-                        std::cout << "Data Tidak Ditemukan!!";
+                        std::cout << "Data Tidak Ditemukan!";
                     }
                     std::cout << "\n\n";
                     system("pause");
@@ -61,7 +66,7 @@ int main() {
                     break;
 
                     case 3:
-                    system("cls");
+                    loading();
                     std::cout << "Jumlah Data : " << jumlah_data(first) << " Kurma";
                     std::cout << "\n\n";
                     system("pause");
@@ -112,7 +117,7 @@ int main() {
                     system("cls");
                     std::cout << "Input Salah!\n\n";
                     system("pause");
-                    system("cls");
+                    loading();
                     break;
                 }
             } while (opsi_stack != 4);    
@@ -120,11 +125,31 @@ int main() {
 
             case 3:
             loading();
+            std::cout << "Kualitas Kurma (1-3)\n";
+            std::cout << "1 - Standard\n";
+            std::cout << "2 - Premium\n";
+            std::cout << "3 - Star\n";
             new_queue(q);
-            enqueue(q, 300, 1);
-            enqueue(q, 350, 3);
-            enqueue(q, 50, 2);
+            std::cout << "\nKURMA 1\n";
+            std::cout << "Masukkan Nama Kurma       : "; std::cin >> kurma1;
+            std::cout << "Masukkan Stock Kurma (Kg) : "; std::cin >> stock1;
+            std::cout << "Masukkan Kualitas Kurma   : "; std::cin >> kualitas1;
+            enqueue(q, stock1, kualitas1, kurma1);
 
+            std::cout << "\nKURMA 2\n";
+            std::cout << "Masukkan Nama Kurma       : "; std::cin >> kurma2;
+            std::cout << "Masukkan Stock Kurma (Kg) : "; std::cin >> stock2;
+            std::cout << "Masukkan Kualitas Kurma   : "; std::cin >> kualitas2;
+            enqueue(q, stock2, kualitas2, kurma2);
+            
+            std::cout << "\nKURMA 3\n";
+            std::cout << "Masukkan Nama Kurma       : "; std::cin >> kurma3;
+            std::cout << "Masukkan Stock Kurma (Kg) : "; std::cin >> stock3;
+            std::cout << "Masukkan Kualitas Kurma   : "; std::cin >> kualitas3;
+            enqueue(q, stock3, kualitas3, kurma3);
+
+            loading();
+            std::cout << "\n-- URUTAN PRIORITAS PENJUALAN KURMA --\n";
             print_queue(q);
             std::cout << "\n";
             system("pause");
@@ -133,7 +158,13 @@ int main() {
 
             case 4:
             system("cls");
-            std::cout << "BYE" << std::endl;
+            std::cout << " = Good Bye! Have A Good Day! = \n\n";     
+            std::cout << "            __  __    \n";
+            std::cout << "           /  \\/  \\ \n";
+            std::cout << "           \\      /  \n";
+            std::cout << "            \\    /   \n";
+            std::cout << "             \\  /    \n";
+            std::cout << "              \\/     \n\n\n";
             exit(0);
             break;
 

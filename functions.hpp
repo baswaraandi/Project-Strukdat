@@ -15,7 +15,7 @@ typedef pointer list;
 void traversal(list& head){
   pointer curr = head;
   while(curr != nullptr){
-    std::cout << curr->data << "\n";
+    std::cout << " - " << curr->data << "\n";
     curr = curr -> next;
   }
 }
@@ -156,6 +156,7 @@ bool deleteStack(Node_Stack *top){
 
 struct Element
     {
+      std::string kurma;
       int data;
       int priority;
       Element *next;
@@ -173,12 +174,13 @@ void new_queue(Queue &q) {
     q.tail = nullptr;
 }
 
-void enqueue(Queue &q, int stock, int priority) {
+void enqueue(Queue &q, int stock, int priority, std::string nama_kurma) {
   ElementPtr p_rev = nullptr;
   ElementPtr p_help = q.head;
   ElementPtr new_element = new Element;
   new_element->data = stock;
   new_element->priority = priority;
+  new_element->kurma = nama_kurma;
   new_element->next = nullptr;
   if (q.head == nullptr && q.tail == nullptr) 
   {
@@ -243,7 +245,7 @@ void print_queue(Queue &q) {
   {
       do
       {
-      std::cout << p_help->data << " : " << p_help->priority << std::endl;
+      std::cout << p_help->data << " Kg - Q" << p_help->priority << " - Kurma " << p_help->kurma << std::endl;
       p_help = p_help->next;
       } while (p_help != nullptr);
   }
