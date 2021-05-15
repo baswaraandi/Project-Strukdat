@@ -124,36 +124,83 @@ int main() {
             break;
 
             case 3:
+            int opsi_penjualan;
             loading();
-            std::cout << "Kualitas Kurma (1-3)\n";
-            std::cout << "1 - Standard\n";
-            std::cout << "2 - Premium\n";
-            std::cout << "3 - Star\n";
-            new_queue(q);
-            std::cout << "\nKURMA 1\n";
-            std::cout << "Masukkan Nama Kurma       : "; std::cin >> kurma1;
-            std::cout << "Masukkan Stock Kurma (Kg) : "; std::cin >> stock1;
-            std::cout << "Masukkan Kualitas Kurma   : "; std::cin >> kualitas1;
-            enqueue(q, stock1, kualitas1, kurma1);
+            do {
+                tampilan_penjualan();
+                std::cout << "Opsi\t: "; std::cin >> opsi_penjualan;
+                switch (opsi_penjualan) {
+                    case 1:
+                    loading();
+                    std::cout << '-' << std::setw(28) << std::setfill('-') << '-' << std::endl;
+                    std::cout << "\tKUALITAS KURMA\n\n";
+                    std::cout << "1 - Standard\n";
+                    std::cout << "2 - Premium\n";
+                    std::cout << "3 - Star\n";
+                    std::cout << '-' << std::setw(28) << std::setfill('-') << '-' << std::endl;
+                    std::cout << "\n";
+                    system("pause");
+                    system("cls");
 
-            std::cout << "\nKURMA 2\n";
-            std::cout << "Masukkan Nama Kurma       : "; std::cin >> kurma2;
-            std::cout << "Masukkan Stock Kurma (Kg) : "; std::cin >> stock2;
-            std::cout << "Masukkan Kualitas Kurma   : "; std::cin >> kualitas2;
-            enqueue(q, stock2, kualitas2, kurma2);
-            
-            std::cout << "\nKURMA 3\n";
-            std::cout << "Masukkan Nama Kurma       : "; std::cin >> kurma3;
-            std::cout << "Masukkan Stock Kurma (Kg) : "; std::cin >> stock3;
-            std::cout << "Masukkan Kualitas Kurma   : "; std::cin >> kualitas3;
-            enqueue(q, stock3, kualitas3, kurma3);
+                    new_queue(q);
+                    std::cout << '+' << std::setw(38) << std::setfill('-') << '+' << std::endl;
+                    std::cout << "\t\t DATA 1\n\n";
+                    std::cout << "Nama Kurma       : "; std::getline(std::cin >> std::ws, kurma1);
+                    std::cout << "Stock (Kg)       : "; std::cin >> stock1;
+                    std::cout << "Kualitas (3-2-1) : "; std::cin >> kualitas1;
+                    std::cout << '+' << std::setw(38) << std::setfill('-') << '+' << std::endl;
+                    enqueue(q, stock1, kualitas1, kurma1);
+                    std::cout << "\n";
+                    system("pause");
+                    system("cls");
 
-            loading();
-            std::cout << "-- URUTAN PRIORITAS PENJUALAN KURMA --\n";
-            print_queue(q);
-            std::cout << "\n";
-            system("pause");
-            system("cls");
+                    std::cout << '+' << std::setw(38) << std::setfill('-') << '+' << std::endl;
+                    std::cout << "\t\t DATA 2\n\n";
+                    std::cout << "Nama Kurma       : "; std::getline(std::cin >> std::ws, kurma2);
+                    std::cout << "Stock (Kg)       : "; std::cin >> stock2;
+                    std::cout << "Kualitas (3-2-1) : "; std::cin >> kualitas2;
+                    std::cout << '+' << std::setw(38) << std::setfill('-') << '+' << std::endl;
+                    enqueue(q, stock2, kualitas2, kurma2);
+                    std::cout << "\n";
+                    system("pause");
+                    system("cls");
+                    
+                    std::cout << '+' << std::setw(38) << std::setfill('-') << '+' << std::endl;
+                    std::cout << "\t\t DATA 3\n\n";
+                    std::cout << "Nama Kurma       : "; std::getline(std::cin >> std::ws, kurma3);
+                    std::cout << "Stock (Kg)       : "; std::cin >> stock3;
+                    std::cout << "Kualitas (3-2-1) : "; std::cin >> kualitas3;
+                    std::cout << '+' << std::setw(38) << std::setfill('-') << '+' << std::endl;
+                    enqueue(q, stock3, kualitas3, kurma3);
+                    std::cout << "\n";
+                    system("pause");
+                    system("cls");
+                    
+                    break;
+
+                    case 2:
+                    loading();
+                    std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
+                    std::cout << "\t\t PRIORITAS PENJUALAN\n";
+                    std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
+                    print_queue(q);
+                    std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
+                    std::cout << "\n";
+                    system("pause");
+                    system("cls");
+
+                    case 3:
+                    system("cls");
+                    break;
+
+                    default:
+                    system("cls");
+                    std::cout << "\nInput Salah!\n\n";
+                    system("pause");
+                    system("cls");
+                    break;
+                }
+            } while (opsi_penjualan != 3);
             break;
 
             case 4:

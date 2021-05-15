@@ -241,12 +241,14 @@ void dequeue(Queue &q) {
 
 void print_queue(Queue &q) {
   ElementPtr p_help = q.head;
+  int i = 1;
   if (q.head != nullptr && q.tail != nullptr)
   {
       do
       {
-      std::cout << p_help->data << " Kg - Q" << p_help->priority << " - Kurma " << p_help->kurma << std::endl;
-      p_help = p_help->next;
+        std::cout << i << " | " << p_help->data << " Kg - Q" << p_help->priority << " - Kurma " << p_help->kurma << std::endl;
+        p_help = p_help->next;
+        i++;
       } while (p_help != nullptr);
   }
 }

@@ -102,10 +102,7 @@ void tampilan_penjualan() {
     std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
     std::cout << "\t\t Penjualan Kurma" << std::endl;
     std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
-    std::cout << "Saran Penjualan Kurma" << std::endl;
-    std::cout << "Kurma C Stock ... Kg Kualitas ..." << std::endl;
-    std::cout << "Kurma A Stock ... Kg Kualitas ..." << std::endl;
-    std::cout << "Kurma A Stock ... Kg Kualitas ..." << std::endl;
+    std::cout << "Daftar Menu" << std::endl;
+    std::cout << "1. Input Data Kurma\n2. Prioritas Penjualan Kurma\n3. Kembali" << std::endl;
     std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
-    std::cout << "1. Kembali" << std::endl;
 }
