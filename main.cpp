@@ -41,9 +41,9 @@ int main() {
                 switch(opsi_linked){
                     case 1:
                     loading();
-                    std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
+                    std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
                     std::cout << "\t\t DAFTAR KURMA\n";
-                    std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
+                    std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
                     traversal(first);
                     std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
                     system("pause");
@@ -96,17 +96,17 @@ int main() {
                 switch (opsi_stack){
                     case 1:
                     loading();
-                    tampilan_edit_stock(stock_kurma_A);
+                    tampilan_edit_stock(stock_kurma_A, "Ajwa", 12);
                     break;
 
                     case 2:
                     loading();
-                    tampilan_edit_stock(stock_kurma_B);
+                    tampilan_edit_stock(stock_kurma_B, "Sukari Al-Qassim", 5);
                     break;
 
                     case 3:
                     loading();
-                    tampilan_edit_stock(stock_kurma_C);
+                    tampilan_edit_stock(stock_kurma_C, "Sukari Deluxe", 7);
                     break;
 
                     case 4:
@@ -149,7 +149,7 @@ int main() {
             enqueue(q, stock3, kualitas3, kurma3);
 
             loading();
-            std::cout << "\n-- URUTAN PRIORITAS PENJUALAN KURMA --\n";
+            std::cout << "-- URUTAN PRIORITAS PENJUALAN KURMA --\n";
             print_queue(q);
             std::cout << "\n";
             system("pause");

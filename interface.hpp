@@ -38,18 +38,19 @@ void tampilan_cek_data() {
 
 void tampilan_cek_stock() {
     std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
-    std::cout << "\t\t   Stock Kurma" << std::endl;
+    std::cout << "\t\t Cek Stock Kurma" << std::endl;
     std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
     std::cout << "Daftar Stock" << std::endl;
     std::cout << "1. Kurma Ajwa\n2. Kurma Sukari Al-Qassim\n3. Kurma Sukari Deluxe\n4. Kembali" << std::endl;
     std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
 }
 
-void tampilan_edit_stock (Stack& stock_kurma) {
+void tampilan_edit_stock (Stack& stock_kurma, std::string tampilan_nama_kurma, int tampilan_spasi) {
     int banyak, opsi, cek_stock;
     do {
         std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
-        std::cout << "\t\t Edit Stock Kurma" << std::endl;
+        std::cout << ' ' << std::setw(tampilan_spasi) << std::setfill(' ') << ' ';
+        std::cout << "Edit Stock Kurma - " << tampilan_nama_kurma << std::endl;
         std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
         std::cout << "Stok Kurma : " << peek(stock_kurma) << " Kg" << '\n';
         std::cout << "Daftar Edit" << std::endl;
