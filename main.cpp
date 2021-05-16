@@ -207,7 +207,7 @@ int main() {
                     std::cout << "\t\t PRIORITAS PENJUALAN\n";
                     std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
                     print_queue(q);
-                    std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
+                    std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
                     std::cout << "\n";
                     system("pause");
                     system("cls");
