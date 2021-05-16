@@ -6,8 +6,8 @@ int main() {
     pointer pBantu;
     pointer p_delete;
     new_element(first, "Ajwa");
-    insert_last(first, "Sukari_Al-Qassim");
-    insert_last(first, "Sukari_Deluxe");
+    insert_last(first, "Sukari Al-Qassim");
+    insert_last(first, "Sukari Deluxe");
     std::string pil_edit_kurma1;
     std::string pil_edit_kurma2;
     std::string pil_edit_kurma3;
@@ -22,6 +22,7 @@ int main() {
     
     // Queue
     Queue q;
+    new_queue(q);
     int stock1, stock2, stock3;
     int kualitas1, kualitas2, kualitas3;
     std::string kurma1, kurma2, kurma3;
@@ -37,7 +38,7 @@ int main() {
             loading();
             do {
                 tampilan_cek_data();
-                std::cout << "Masukkan Nomor Menu\t: "; std::cin >> opsi_linked;
+                std::cout << "Opsi\t\t        : "; std::cin >> opsi_linked;
                 switch(opsi_linked){
                     case 1:
                     loading();
@@ -46,13 +47,13 @@ int main() {
                     std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
                     traversal(first);
                     std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
+                    std::cout << '\n';
                     system("pause");
                     system("cls");
                     break;
 
                     case 2:
-                    system("cls");
-                    std::cout << "Masukkan Nama Kurma\t: "; std::cin >> pil_edit_kurma1;
+                    std::cout << "Masukkan Nama Kurma\t: "; std::getline(std::cin >> std::ws, pil_edit_kurma1);
                     search(first, pBantu , pil_edit_kurma1);
                     loading();
                     if (pBantu != nullptr){
@@ -66,6 +67,29 @@ int main() {
                     break;
 
                     case 3:
+                    std::cout << "Masukkan Nama Kurma\t: "; std::getline(std::cin >> std::ws, pil_edit_kurma2);
+                    insert_last(first, pil_edit_kurma2);
+                    loading();
+                    std::cout << "Data Berhasil Ditambahkan!\n\n";
+                    system("pause");
+                    system("cls");
+                    break;
+
+                    case 4:
+                    std::cout << "Masukkan Nama Kurma\t: "; std::getline(std::cin >> std::ws, pil_edit_kurma2);
+                    delete_by_key(first, p_delete, pil_edit_kurma2);
+                    loading();
+                    if (first == nullptr || p_delete == nullptr) {
+                        std::cout << "Kurma yang dicari tidak ditemukan!\n\n";
+                    }
+                    else {
+                        std::cout << "Data Telah Terhapus!\n\n";
+                    }
+                    system("pause");
+                    system("cls");
+                    break;
+
+                    case 5:
                     loading();
                     std::cout << "Jumlah Data : " << jumlah_data(first) << " Kurma";
                     std::cout << "\n\n";
@@ -73,7 +97,7 @@ int main() {
                     system("cls");
                     break;
 
-                    case 4:
+                    case 6:
                     system("cls");
                     break;
 
@@ -84,7 +108,7 @@ int main() {
                     system("cls");
                     break;
                 }
-            } while (opsi_linked != 4);
+            } while (opsi_linked != 6);
             break;
 
             case 2:
@@ -142,7 +166,6 @@ int main() {
                     system("pause");
                     system("cls");
 
-                    new_queue(q);
                     std::cout << '+' << std::setw(38) << std::setfill('-') << '+' << std::endl;
                     std::cout << "\t\t DATA 1\n\n";
                     std::cout << "Nama Kurma       : "; std::getline(std::cin >> std::ws, kurma1);

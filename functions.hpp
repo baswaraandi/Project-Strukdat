@@ -14,9 +14,11 @@ typedef pointer list;
   
 void traversal(list& head){
   pointer curr = head;
+  int i = 1;
   while(curr != nullptr){
-    std::cout << " - " << curr->data << "\n";
+    std::cout << i << " | " << curr->data << "\n";
     curr = curr -> next;
+    i++;
   }
 }
 
@@ -165,13 +167,13 @@ struct Element
 
 struct Queue
     {
-    ElementPtr head;
-    ElementPtr tail;
+      ElementPtr head;
+      ElementPtr tail;
     };
 
 void new_queue(Queue &q) {
-    q.head = nullptr;
-    q.tail = nullptr;
+  q.head = nullptr;
+  q.tail = nullptr;
 }
 
 void enqueue(Queue &q, int stock, int priority, std::string nama_kurma) {
@@ -250,5 +252,8 @@ void print_queue(Queue &q) {
         p_help = p_help->next;
         i++;
       } while (p_help != nullptr);
+  }
+  else {
+    std::cout << "Data Kosong";
   }
 }

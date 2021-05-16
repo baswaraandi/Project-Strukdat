@@ -32,7 +32,7 @@ void tampilan_cek_data() {
     std::cout << "\t\t Cek Data Kurma" << std::endl;
     std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
     std::cout << "Daftar Edit" << std::endl;
-    std::cout << "1. Daftar Kurma\n2. Cari Kurma\n3. Jumlah Data Kurma\n4. Kembali" << std::endl;
+    std::cout << "1. Daftar Kurma\n2. Cari Kurma\n3. Tambah Data Kurma\n4. Hapus Data Kurma\n5. Jumlah Data Kurma\n6. Kembali" << std::endl;
     std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
 }
 
