@@ -84,8 +84,7 @@ int main() {
                     loading();
                     if (first == nullptr || p_delete == nullptr) {
                         std::cout << "Kurma yang dicari tidak ditemukan!\n\n";
-                    }
-                    else {
+                    } else {
                         std::cout << "Data Telah Terhapus!\n\n";
                     }
                     system("pause");
@@ -113,7 +112,7 @@ int main() {
             break;
 
             case 2:
-            int banyak, opsi_stack, cek_stock;
+            int opsi_stack;
             loading();
             do {
                 tampilan_cek_stock();
@@ -155,7 +154,6 @@ int main() {
                     loading();
                     std::cout << "Banyak Data Kurma : "; std::cin >> banyak_data;
                     system("cls");
-
                     for (int i = 1; i <= banyak_data; i++) {
                         tampilan_kualitas_kurma();
                         std::cout << '+' << std::setw(38) << std::setfill('-') << '+' << std::endl;
@@ -188,8 +186,7 @@ int main() {
                         std::cout << "Data Kosong\n\n";
                         system ("pause");
                         system ("cls");
-                    }
-                    else {
+                    } else {
                         dequeue(q);
                         loading();
                         std::cout << "Data Paling Utama Telah Terhapus!\n\n";
