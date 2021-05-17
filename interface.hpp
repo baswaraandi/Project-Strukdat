@@ -41,7 +41,7 @@ void tampilan_input_salah() {
 void tampilan_kualitas_kurma() {
     std::cout << '+' << std::setw(38) << std::setfill('-') << '+' << "\n";
     std::cout << "\t     Kualitas Kurma\n\n";
-    std::cout << "1 - Standard\n2 - Premium\n3 - Star\n";
+    std::cout << "1 - Star\n2 - Premium\n3 - Standard\n";
     std::cout << '+' << std::setw(38) << std::setfill('-') << '+' << "\n\n";
 }
 
