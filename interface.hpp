@@ -1,5 +1,7 @@
 #include "functions.hpp"
 
+// MENU UMUM
+
 void loading()
 {
     system("cls");
@@ -18,6 +20,42 @@ void loading()
     system("cls");
 }
 
+void tampilan_exit_program() {
+    system("cls");
+    std::cout << " = Dadah! Semoga Harimu Menyenangkan! = \n\n";     
+    std::cout << "              __  __    \n";
+    std::cout << "             /  \\/  \\ \n";
+    std::cout << "             \\      /  \n";
+    std::cout << "              \\    /   \n";
+    std::cout << "               \\  /    \n";
+    std::cout << "                \\/     \n\n\n";
+}
+
+void tampilan_input_salah() {
+    system("cls");
+    std::cout << "Input Salah!\n\n";
+    system("pause");
+    system("cls");
+}
+
+void tampilan_kualitas_kurma() {
+    std::cout << '+' << std::setw(38) << std::setfill('-') << '+' << std::endl;
+    std::cout << "\t     Kualitas Kurma\n\n";
+    std::cout << "1 - Standard\n";
+    std::cout << "2 - Premium\n";
+    std::cout << "3 - Star\n";
+    std::cout << '+' << std::setw(38) << std::setfill('-') << '+' << std::endl;
+    std::cout << "\n";
+}
+
+void tampilan_judul_submenu(std::string judul_submenu){
+    std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
+    std::cout << "\t\t " << judul_submenu << "\n";
+    std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
+}
+
+// MENU AWAL
+
 void tampilan_awal() {
     std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
     std::cout << "\t TOKO KURMA BAROKAH AL-SWAGGIYAH" << std::endl;
@@ -25,6 +63,8 @@ void tampilan_awal() {
     std::cout << "Daftar Menu\n1. Cek Data Kurma\n2. Cek Stock Kurma\n3. Penjualan Kurma\n4. Keluar Program" << std::endl;
     std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
 }
+
+// MENU CEK DATA KURMA
 
 void tampilan_cek_data() {
     std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
@@ -34,6 +74,8 @@ void tampilan_cek_data() {
     std::cout << "1. Daftar Kurma\n2. Cari Kurma\n3. Tambah Data Kurma\n4. Hapus Data Kurma\n5. Jumlah Data Kurma\n6. Kembali" << std::endl;
     std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
 }
+
+// MENU CEK STOCK KURMA
 
 void tampilan_cek_stock() {
     std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
@@ -96,6 +138,8 @@ void tampilan_edit_stock (Stack& stock_kurma, std::string tampilan_nama_kurma, i
         }
     } while (opsi != 4);
 }
+
+// MENU PENJUALAN KURMA
 
 void tampilan_penjualan() {
     std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;

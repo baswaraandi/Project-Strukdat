@@ -41,9 +41,7 @@ int main() {
                 switch(opsi_linked){
                     case 1:
                     loading();
-                    std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
-                    std::cout << "\t\t Daftar Kurma\n";
-                    std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
+                    tampilan_judul_submenu("Daftar Kurma");
                     traversal(first);
                     std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
                     std::cout << '\n';
@@ -53,9 +51,7 @@ int main() {
 
                     case 2:
                     system("cls");
-                    std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
-                    std::cout << "\t\t Cari Kurma\n";
-                    std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
+                    tampilan_judul_submenu("Cari Kurma");
                     std::cout << "Masukkan Nama Kurma\t: "; std::getline(std::cin >> std::ws, pil_edit_kurma1);
                     search(first, pBantu , pil_edit_kurma1);
                     loading();
@@ -71,9 +67,7 @@ int main() {
 
                     case 3:
                     system("cls");
-                    std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
-                    std::cout << "\t\t Tambah Data Kurma\n";
-                    std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
+                    tampilan_judul_submenu("Tambah Data Kurma");
                     std::cout << "Masukkan Nama Kurma\t: "; std::getline(std::cin >> std::ws, pil_edit_kurma2);
                     insert_last(first, pil_edit_kurma2);
                     loading();
@@ -84,9 +78,7 @@ int main() {
 
                     case 4:
                     system("cls");
-                    std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
-                    std::cout << "\t\t Hapus Data Kurma\n";
-                    std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
+                    tampilan_judul_submenu("Hapus Data Kurma");
                     std::cout << "Masukkan Nama Kurma\t: "; std::getline(std::cin >> std::ws, pil_edit_kurma2);
                     delete_by_key(first, p_delete, pil_edit_kurma2);
                     loading();
@@ -102,9 +94,7 @@ int main() {
 
                     case 5:
                     loading();
-                    std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
-                    std::cout << "\t\t Jumlah Data Kurma\n";
-                    std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
+                    tampilan_judul_submenu("Jumlah Data Kurma");
                     std::cout << "Jumlah Data : " << jumlah_data(first) << " Kurma";
                     std::cout << "\n\n";
                     system("pause");
@@ -116,10 +106,7 @@ int main() {
                     break;
 
                     default:
-                    system("cls");
-                    std::cout << "Input Salah!\n\n";
-                    system("pause");
-                    system("cls");
+                    tampilan_input_salah();
                     break;
                 }
             } while (opsi_linked != 6);
@@ -151,10 +138,7 @@ int main() {
                     break;
 
                     default:
-                    system("cls");
-                    std::cout << "Input Salah!\n\n";
-                    system("pause");
-                    loading();
+                    tampilan_input_salah();
                     break;
                 }
             } while (opsi_stack != 4);    
@@ -173,13 +157,7 @@ int main() {
                     system("cls");
 
                     for (int i = 1; i <= banyak_data; i++) {
-                        std::cout << '+' << std::setw(38) << std::setfill('-') << '+' << std::endl;
-                        std::cout << "\t     Kualitas Kurma\n\n";
-                        std::cout << "1 - Standard\n";
-                        std::cout << "2 - Premium\n";
-                        std::cout << "3 - Star\n";
-                        std::cout << '+' << std::setw(38) << std::setfill('-') << '+' << std::endl;
-                        std::cout << "\n";
+                        tampilan_kualitas_kurma();
                         std::cout << '+' << std::setw(38) << std::setfill('-') << '+' << std::endl;
                         std::cout << "\t\t Data " << i << "\n\n";
                         std::cout << "Nama Kurma       : "; std::getline(std::cin >> std::ws, kurma);
@@ -195,9 +173,7 @@ int main() {
 
                     case 2:
                     loading();
-                    std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
-                    std::cout << "\t\t Prioritas Penjualan Kurma\n";
-                    std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
+                    tampilan_judul_submenu("Prioritas Penjualan Kurma");
                     print_queue(q);
                     std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
                     std::cout << "\n";
@@ -227,32 +203,19 @@ int main() {
                     break;
 
                     default:
-                    system("cls");
-                    std::cout << "\nInput Salah!\n\n";
-                    system("pause");
-                    system("cls");
+                    tampilan_input_salah();
                     break;
                 }
             } while (opsi_penjualan != 4);
             break;
 
             case 4:
-            system("cls");
-            std::cout << " = Dadah! Semoga Harimu Menyenangkan! = \n\n";     
-            std::cout << "              __  __    \n";
-            std::cout << "             /  \\/  \\ \n";
-            std::cout << "             \\      /  \n";
-            std::cout << "              \\    /   \n";
-            std::cout << "               \\  /    \n";
-            std::cout << "                \\/     \n\n\n";
+            tampilan_exit_program();
             exit(0);
             break;
 
             default:
-            system("cls");
-            std::cout << "\nInput Salah!\n\n";
-            system("pause");
-            system("cls");
+            tampilan_input_salah();
             break;
         }
     } while (pil_menu != 4);
