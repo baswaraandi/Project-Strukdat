@@ -23,9 +23,8 @@ int main() {
     // Queue
     Queue q;
     new_queue(q);
-    int stock1, stock2, stock3;
-    int kualitas1, kualitas2, kualitas3;
-    std::string kurma1, kurma2, kurma3;
+    int stock, kualitas;
+    std::string kurma;
     
     int pil_menu;
     loading();
@@ -38,12 +37,12 @@ int main() {
             loading();
             do {
                 tampilan_cek_data();
-                std::cout << "Opsi\t\t        : "; std::cin >> opsi_linked;
+                std::cout << "Pilih Menu\t: "; std::cin >> opsi_linked;
                 switch(opsi_linked){
                     case 1:
                     loading();
                     std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
-                    std::cout << "\t\t DAFTAR KURMA\n";
+                    std::cout << "\t\t Daftar Kurma\n";
                     std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
                     traversal(first);
                     std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
@@ -53,6 +52,10 @@ int main() {
                     break;
 
                     case 2:
+                    system("cls");
+                    std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
+                    std::cout << "\t\t Cari Kurma\n";
+                    std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
                     std::cout << "Masukkan Nama Kurma\t: "; std::getline(std::cin >> std::ws, pil_edit_kurma1);
                     search(first, pBantu , pil_edit_kurma1);
                     loading();
@@ -67,6 +70,10 @@ int main() {
                     break;
 
                     case 3:
+                    system("cls");
+                    std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
+                    std::cout << "\t\t Tambah Data Kurma\n";
+                    std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
                     std::cout << "Masukkan Nama Kurma\t: "; std::getline(std::cin >> std::ws, pil_edit_kurma2);
                     insert_last(first, pil_edit_kurma2);
                     loading();
@@ -76,6 +83,10 @@ int main() {
                     break;
 
                     case 4:
+                    system("cls");
+                    std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
+                    std::cout << "\t\t Hapus Data Kurma\n";
+                    std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
                     std::cout << "Masukkan Nama Kurma\t: "; std::getline(std::cin >> std::ws, pil_edit_kurma2);
                     delete_by_key(first, p_delete, pil_edit_kurma2);
                     loading();
@@ -91,6 +102,9 @@ int main() {
 
                     case 5:
                     loading();
+                    std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
+                    std::cout << "\t\t Jumlah Data Kurma\n";
+                    std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
                     std::cout << "Jumlah Data : " << jumlah_data(first) << " Kurma";
                     std::cout << "\n\n";
                     system("pause");
@@ -116,13 +130,12 @@ int main() {
             loading();
             do {
                 tampilan_cek_stock();
-                std::cout << "Opsi\t: "; std::cin >> opsi_stack;
+                std::cout << "Pilih Menu\t: "; std::cin >> opsi_stack;
                 switch (opsi_stack){
                     case 1:
                     loading();
                     tampilan_edit_stock(stock_kurma_A, "Ajwa", 12);
                     break;
-
                     case 2:
                     loading();
                     tampilan_edit_stock(stock_kurma_B, "Sukari Al-Qassim", 5);
@@ -148,71 +161,68 @@ int main() {
             break;
 
             case 3:
-            int opsi_penjualan;
+            int opsi_penjualan, banyak_data;
             loading();
             do {
                 tampilan_penjualan();
-                std::cout << "Opsi\t: "; std::cin >> opsi_penjualan;
+                std::cout << "Pilih Menu\t: "; std::cin >> opsi_penjualan;
                 switch (opsi_penjualan) {
                     case 1:
                     loading();
-                    std::cout << '-' << std::setw(28) << std::setfill('-') << '-' << std::endl;
-                    std::cout << "\tKUALITAS KURMA\n\n";
-                    std::cout << "1 - Standard\n";
-                    std::cout << "2 - Premium\n";
-                    std::cout << "3 - Star\n";
-                    std::cout << '-' << std::setw(28) << std::setfill('-') << '-' << std::endl;
-                    std::cout << "\n";
-                    system("pause");
+                    std::cout << "Banyak Data Kurma : "; std::cin >> banyak_data;
                     system("cls");
 
-                    std::cout << '+' << std::setw(38) << std::setfill('-') << '+' << std::endl;
-                    std::cout << "\t\t DATA 1\n\n";
-                    std::cout << "Nama Kurma       : "; std::getline(std::cin >> std::ws, kurma1);
-                    std::cout << "Stock (Kg)       : "; std::cin >> stock1;
-                    std::cout << "Kualitas (3-2-1) : "; std::cin >> kualitas1;
-                    std::cout << '+' << std::setw(38) << std::setfill('-') << '+' << std::endl;
-                    enqueue(q, stock1, kualitas1, kurma1);
-                    std::cout << "\n";
-                    system("pause");
-                    system("cls");
-
-                    std::cout << '+' << std::setw(38) << std::setfill('-') << '+' << std::endl;
-                    std::cout << "\t\t DATA 2\n\n";
-                    std::cout << "Nama Kurma       : "; std::getline(std::cin >> std::ws, kurma2);
-                    std::cout << "Stock (Kg)       : "; std::cin >> stock2;
-                    std::cout << "Kualitas (3-2-1) : "; std::cin >> kualitas2;
-                    std::cout << '+' << std::setw(38) << std::setfill('-') << '+' << std::endl;
-                    enqueue(q, stock2, kualitas2, kurma2);
-                    std::cout << "\n";
-                    system("pause");
-                    system("cls");
-                    
-                    std::cout << '+' << std::setw(38) << std::setfill('-') << '+' << std::endl;
-                    std::cout << "\t\t DATA 3\n\n";
-                    std::cout << "Nama Kurma       : "; std::getline(std::cin >> std::ws, kurma3);
-                    std::cout << "Stock (Kg)       : "; std::cin >> stock3;
-                    std::cout << "Kualitas (3-2-1) : "; std::cin >> kualitas3;
-                    std::cout << '+' << std::setw(38) << std::setfill('-') << '+' << std::endl;
-                    enqueue(q, stock3, kualitas3, kurma3);
-                    std::cout << "\n";
-                    system("pause");
-                    system("cls");
-                    
+                    for (int i = 1; i <= banyak_data; i++) {
+                        std::cout << '+' << std::setw(38) << std::setfill('-') << '+' << std::endl;
+                        std::cout << "\t     Kualitas Kurma\n\n";
+                        std::cout << "1 - Standard\n";
+                        std::cout << "2 - Premium\n";
+                        std::cout << "3 - Star\n";
+                        std::cout << '+' << std::setw(38) << std::setfill('-') << '+' << std::endl;
+                        std::cout << "\n";
+                        std::cout << '+' << std::setw(38) << std::setfill('-') << '+' << std::endl;
+                        std::cout << "\t\t Data " << i << "\n\n";
+                        std::cout << "Nama Kurma       : "; std::getline(std::cin >> std::ws, kurma);
+                        std::cout << "Stock (Kg)       : "; std::cin >> stock;
+                        std::cout << "Kualitas         : "; std::cin >> kualitas;
+                        std::cout << '+' << std::setw(38) << std::setfill('-') << '+' << std::endl;
+                        enqueue(q, stock, kualitas, kurma);
+                        std::cout << "\n";
+                        system("pause");
+                        system("cls");
+                    }                    
                     break;
 
                     case 2:
                     loading();
                     std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
-                    std::cout << "\t\t PRIORITAS PENJUALAN\n";
+                    std::cout << "\t\t Prioritas Penjualan Kurma\n";
                     std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
                     print_queue(q);
                     std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
                     std::cout << "\n";
                     system("pause");
                     system("cls");
+                    break;
 
                     case 3:
+                    if (q.head == nullptr && q.tail == nullptr) {
+                        loading();
+                        system ("cls");
+                        std::cout << "Data Kosong\n\n";
+                        system ("pause");
+                        system ("cls");
+                    }
+                    else {
+                        dequeue(q);
+                        loading();
+                        std::cout << "Data Paling Utama Telah Terhapus!\n\n";
+                        system("pause");
+                        system("cls");
+                    }
+                    break;
+
+                    case 4:
                     system("cls");
                     break;
 
@@ -223,18 +233,18 @@ int main() {
                     system("cls");
                     break;
                 }
-            } while (opsi_penjualan != 3);
+            } while (opsi_penjualan != 4);
             break;
 
             case 4:
             system("cls");
-            std::cout << " = Good Bye! Have A Good Day! = \n\n";     
-            std::cout << "            __  __    \n";
-            std::cout << "           /  \\/  \\ \n";
-            std::cout << "           \\      /  \n";
-            std::cout << "            \\    /   \n";
-            std::cout << "             \\  /    \n";
-            std::cout << "              \\/     \n\n\n";
+            std::cout << " = Dadah! Semoga Harimu Menyenangkan! = \n\n";     
+            std::cout << "              __  __    \n";
+            std::cout << "             /  \\/  \\ \n";
+            std::cout << "             \\      /  \n";
+            std::cout << "              \\    /   \n";
+            std::cout << "               \\  /    \n";
+            std::cout << "                \\/     \n\n\n";
             exit(0);
             break;
 

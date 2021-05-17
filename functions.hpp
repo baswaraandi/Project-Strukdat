@@ -254,6 +254,6 @@ void print_queue(Queue &q) {
       } while (p_help != nullptr);
   }
   else {
-    std::cout << "Data Kosong";
+    std::cout << "Data Kosong" << std::endl;
   }
 }

@@ -22,10 +22,9 @@ void tampilan_awal() {
     std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
     std::cout << "\t TOKO KURMA BAROKAH AL-SWAGGIYAH" << std::endl;
     std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
-    std::cout << "Daftar Menu\n1. Cek Data Kurma\n2. Cek Stock Kurma\n3. Penjualan Kurma\n4. Exit" << std::endl;
+    std::cout << "Daftar Menu\n1. Cek Data Kurma\n2. Cek Stock Kurma\n3. Penjualan Kurma\n4. Keluar Program" << std::endl;
     std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
 }
-
 
 void tampilan_cek_data() {
     std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
@@ -56,7 +55,7 @@ void tampilan_edit_stock (Stack& stock_kurma, std::string tampilan_nama_kurma, i
         std::cout << "Daftar Edit" << std::endl;
         std::cout << "1. Tambah Stock\n2. Kurang Stock\n3. Undo\n4. Kembali" << std::endl;
         std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
-        std::cout << "Opsi\t: "; std::cin >> opsi;
+        std::cout << "Pilih Menu\t: "; std::cin >> opsi;
         switch (opsi){
             case 1:
             system("cls");
@@ -103,6 +102,6 @@ void tampilan_penjualan() {
     std::cout << "\t\t Penjualan Kurma" << std::endl;
     std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
     std::cout << "Daftar Menu" << std::endl;
-    std::cout << "1. Input Data Kurma\n2. Prioritas Penjualan Kurma\n3. Kembali" << std::endl;
+    std::cout << "1. Input Data Kurma\n2. Prioritas Penjualan Kurma\n3. Hapus Data Prioritas Paling Utama\n4. Kembali" << std::endl;
     std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
 }
