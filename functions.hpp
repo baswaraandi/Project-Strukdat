@@ -12,25 +12,15 @@ struct node{
 typedef node* pointer;
 typedef pointer list;
   
-void traversal(list head){
+void traversal(list& head){
   pointer curr = head;
+  int i = 1;
   while(curr != nullptr){
-    std::cout << curr->data << "\n";
+    std::cout << i << " | " << curr->data << "\n";
     curr = curr -> next;
+    i++;
   }
-  std::cout << '\n';
 }
-
-void tampilan_awal(list &head) {
-    std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
-    std::cout << "\t TOKO KURMA BAROKAH AL-SWAGGIYAH" << std::endl;
-    std::cout << '=' << std::setw(48) << std::setfill('=') << '=' << std::endl;
-    traversal(head);
-    std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
-    std::cout << "Daftar Menu\n1. Edit Data Kurma\n2. Cek Stock Kurma\n3. Penjualan Kurma\n4. Exit" << std::endl;
-    std::cout << '+' << std::setw(48) << std::setfill('-') << '+' << std::endl;
-}
-
 
 void new_element(list &pBaru, std::string Data){
   pBaru = new node;
@@ -86,41 +76,51 @@ void delete_by_key(list& head, list& p_delete, std::string key){
     }
 }
 
+int jumlah_data(list& head) {
+  pointer p_help = head;
+  int jumlah = 0;
+  while (p_help != nullptr) {
+    p_help = p_help->next;
+    jumlah++;
+  }
+  return jumlah;
+}
+
 // CASE 2 : Stack
 
-struct Node1{
+struct Node_Stack{
   int data;
-  Node1 *next;
+  Node_Stack *next;
 };
-typedef Node1 *pNode1;
-typedef pNode1 Stack1;
+typedef Node_Stack *pNode;
+typedef pNode Stack;
 
-Stack1 createStack1(Stack1 top){
+Stack createStack(Stack top){
   top = nullptr;
   return top;
 }
 
-pNode1 new_element1(int data){
-  pNode1 newElement = new Node1;
+pNode new_element(int data){
+  pNode newElement = new Node_Stack;
   newElement->data = data;
   newElement->next = nullptr;
   return newElement;
 }
 
-bool isEmpty1(Stack1 top){
+bool isEmpty(Stack top){
   return top == nullptr;
 }
 
-int peek1(Stack1 top){
-  if (isEmpty1(top)){
+int peek(Stack top){
+  if (isEmpty(top)){
     return 0;
   }else{
     return top->data;
   }
 }
 
-Stack1 push1(Stack1 top, pNode1 newElement){
-  if (isEmpty1(top)){
+Stack push(Stack top, pNode newElement){
+  if (isEmpty(top)){
     top = newElement;
   }else{
     newElement->next = top;
@@ -129,9 +129,9 @@ Stack1 push1(Stack1 top, pNode1 newElement){
   return top;
 }
 
-void pop1(Stack1 &top){
-  pNode1 target;
-  if (isEmpty1(top)){
+void pop(Stack &top){
+  pNode target;
+  if (isEmpty(top)){
     target = nullptr;
   }else if (top->next == nullptr){
     target = top;
@@ -144,8 +144,8 @@ void pop1(Stack1 &top){
   delete target;
 }
 
-bool deleteStack1 (Node1 *top){
-  Node1 *curr;
+bool deleteStack(Node_Stack *top){
+  Node_Stack *curr;
   while (top != nullptr){
     curr = top->next;
     delete top;
@@ -154,175 +154,106 @@ bool deleteStack1 (Node1 *top){
   return 0;
 }
 
-// struct Node2{
-//   int data;
-//   Node2 *next;
-// };
-// typedef Node2 *pNode2;
-// typedef pNode2 Stack2;
-
-// Stack2 createStack2(Stack2 top){
-//   top = nullptr;
-//   return top;
-// }
-
-// pNode2 new_element2(int data){
-//   pNode2 newElement = new Node2;
-//   newElement->data = data;
-//   newElement->next = nullptr;
-//   return newElement;
-// }
-
-// bool isEmpty2(Stack2 top){
-//   return top == nullptr;
-// }
-
-// int peek2(Stack2 top){
-//   if (isEmpty2(top)){
-//     return 0;
-//   }else{
-//     return top->data;
-//   }
-// }
-
-// Stack2 push2(Stack2 top, pNode2 newElement){
-//   if (isEmpty2(top)){
-//     top = newElement;
-//   }else{
-//     newElement->next = top;
-//     top = newElement;
-//   }
-//   return top;
-// }
-
-// void pop2(Stack2 &top){
-//   pNode2 target;
-//   if (isEmpty2(top)){
-//     target = nullptr;
-//   }else if (top->next == nullptr){
-//     target = top;
-//     top = nullptr;
-//   }else{
-//     target = top;
-//     top = top->next;
-//     target->next = nullptr;
-//   }
-//   delete target;
-// }
-
-// bool deleteStack2(Node2 *top){
-//   Node2 *curr;
-//   while (top != nullptr){
-//     curr = top->next;
-//     delete top;
-//     top = curr;
-//   }
-//   return 0;
-// }
-
-// struct Node3{
-//   int data;
-//   Node3 *next;
-// };
-// typedef Node3 *pNode3;
-// typedef pNode3 Stack3;
-
-// Stack3 createStack3(Stack3 top){
-//   top = nullptr;
-//   return top;
-// }
-
-// pNode3 new_element3(int data){
-//   pNode3 newElement = new Node3;
-//   newElement->data = data;
-//   newElement->next = nullptr;
-//   return newElement;
-// }
-
-// bool isEmpty3(Stack3 top){
-//   return top == nullptr;
-// }
-
-// int peek3(Stack3 top){
-//   if (isEmpty3(top)){
-//     return 0;
-//   }else{
-//     return top->data;
-//   }
-// }
-
-// Stack3 push3(Stack3 top, pNode3 newElement){
-//   if (isEmpty3(top)){
-//     top = newElement;
-//   }else{
-//     newElement->next = top;
-//     top = newElement;
-//   }
-//   return top;
-// }
-
-// void pop3(Stack3 &top){
-//   pNode3 target;
-//   if (isEmpty3(top)){
-//     target = nullptr;
-//   }else if (top->next == nullptr){
-//     target = top;
-//     top = nullptr;
-//   }else{
-//     target = top;
-//     top = top->next;
-//     target->next = nullptr;
-//   }
-//   delete target;
-// }
-
-// bool deleteStack3(Node3 *top){
-//   Node3 *curr;
-//   while (top != nullptr){
-//     curr = top->next;
-//     delete top;
-//     top = curr;
-//   }
-//   return 0;
-// }
-
 // CASE 3 : PRIORTY QUEUE
 
-struct Node4
+struct Element
     {
+      std::string kurma;
       int data;
       int priority;
-      Node4 *next;
+      Element *next;
     };
-typedef Node4* element;
+    using ElementPtr = Element*;
 
 struct Queue
     {
-    element Head;
-    element Tail;
+      ElementPtr head;
+      ElementPtr tail;
     };
-Queue Q;
 
-void new_queue(Queue& Q){
-    Q.Head = nullptr;
-    Q.Tail = nullptr;
+void new_queue(Queue &q) {
+  q.head = nullptr;
+  q.tail = nullptr;
 }
 
-void createElement(element& newElement, int data, int priority){
-    newElement = new Node4;
-    newElement->data = data;
-    newElement->priority = priority;
-    newElement->next = nullptr;
-}
-
-int front(Queue Q){
-    return Q.Head->data;
-}
-
-bool isEmpty(Queue Q){
-    if(Q.Head == nullptr && Q.Tail == nullptr){
-        return true;
-    }else{
-        return false;
+void enqueue(Queue &q, int stock, int priority, std::string nama_kurma) {
+  ElementPtr p_rev = nullptr;
+  ElementPtr p_help = q.head;
+  ElementPtr new_element = new Element;
+  new_element->data = stock;
+  new_element->priority = priority;
+  new_element->kurma = nama_kurma;
+  new_element->next = nullptr;
+  if (q.head == nullptr && q.tail == nullptr) 
+  {
+    q.head = new_element;
+    q.tail = new_element;
+  } 
+  else 
+  {
+    while (new_element->priority <= p_help->priority) 
+    {
+      if (p_help->next == nullptr) 
+      break;
+      p_rev = p_help;
+      p_help = p_help->next;
     }
+    if (p_help == q.head && new_element->priority >= p_help->priority)
+    {
+      new_element->next = p_help;
+      q.head = new_element;
+    }
+    else if (p_help == q.tail && new_element->priority <= p_help->priority)
+    {
+      p_help->next = new_element;
+      q.tail = new_element;
+    }
+    else
+    {
+      p_rev->next = new_element;
+      new_element->next = p_help;
+    }
+  }
+}
+
+int top (Queue &q) {
+  return q.head->data;
+}
+
+void dequeue(Queue &q) {
+  ElementPtr del_element;
+  if (q.head == nullptr && q.tail == nullptr)
+  {
+    del_element = nullptr;
+  }
+  else if (q.head->next == nullptr)
+  {
+    del_element = q.head;
+    q.head = nullptr;
+    q.tail = nullptr;
+  }
+  else
+  {
+    del_element = q.head;
+    q.head = q.head->next;
+    del_element->next = nullptr;
+  }
+  delete del_element;
+}
+
+void print_queue(Queue &q) {
+  ElementPtr p_help = q.head;
+  int i = 1;
+  if (q.head != nullptr && q.tail != nullptr)
+  {
+      do
+      {
+        std::cout << i << " | " << p_help->data << " Kg - Q" << p_help->priority << " - Kurma " << p_help->kurma << std::endl;
+        p_help = p_help->next;
+        i++;
+      } while (p_help != nullptr);
+  }
+  else {
+    std::cout << "Data Kosong" << std::endl;
+  }
 }
