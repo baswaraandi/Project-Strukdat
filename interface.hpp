@@ -120,12 +120,17 @@ void tampilan_edit_stock (Stack& stock_kurma, std::string tampilan_nama_kurma, i
             }
             else {
                 cek_stock = peek(stock_kurma) - banyak;
-                if (cek_stock < banyak) {
+                if (peek(stock_kurma) < banyak) {
                     system("cls");
-                    std::cout << "\nInput Melebihi Stock yang Ada!\n\n";
+                    std::cout << "Input Melebihi Stock yang Ada!\n\n";
                     system("pause");
                     system("cls");
-                }else {
+                }
+                else if (peek(stock_kurma) == banyak) {
+                    stock_kurma = push(stock_kurma, new_element(cek_stock));
+                    loading();
+                }
+                else {
                     stock_kurma = push(stock_kurma, new_element(cek_stock));
                     loading();
                 }
